@@ -1,0 +1,35 @@
+/*All*/
+/*.bold {
+    font-size: 1.3em;
+}*/
+
+
+.temp {
+    background-color: burlywood;
+}
+
+/*2.5kg Box*/
+.oddBox-top {
+    display: flex;
+}
+
+.oddBox-top-left {
+    flex: 1;
+}
+.oddBox-top-right {
+    flex: 1;
+    text-align: right;
+}
+
+/*5kg Box*/
+.evenBox-top {
+    display: flex;
+}
+
+.evenBox-top-left {
+    flex: 1;
+}
+.evenBox-top-right {
+    flex: 1;
+    text-align: right;
+}

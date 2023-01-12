@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<th:block th:replace="~{basicTemplate :: setContent(~{this::content})}" xmlns:th="http://www.w3.org/1999/xhtml">
+    <th:block th:fragment="content">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+                integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+                crossorigin="anonymous"></script>
+        <link href="https://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.min.css" rel="stylesheet">
+        <script src="https://code.jquery.com/ui/1.10.2/jquery-ui.min.js"></script>
+
+        <link rel="stylesheet" th:href="@{/css/status.css}"/>
+
+        <div class="wrapper">
+
+            <!--Title-->
+            <div class="title bold">주문배송현황</div>
+
+            <!--SearchBox-->
+            <div class="searchBox temp">
+                검색검색
+                <div>
+                    <button class="btn">검색</button>
+                    <button class="cancelBtn">초기화</button>
+                </div>
+
+            </div>
+            <!--End search box-->
+
+            <!--StatusBox-->
+            <div class="statusTableBox temp" style="overflow: auto; max-width: 88em;">
+                <table id="statusTable"  style="white-space:nowrap;" >
+                    <tr>
+                        <th>주문번호</th>
+                        <th>주문날짜</th>
+                        <th>주문코드</th>
+                        <th>토마토품질</th>
+                        <th>토마토사이즈</th>
+                        <th>토마토박스수량</th>
+                        <th>전체주문수량</th>
+                        <th>주문자</th>
+                        <th>주문자연락처</th>
+                        <th>받는사람</th>
+                        <th>받는사람연락처</th>
+                        <th>받는사람주소</th>
+                        <th>배송메세지</th>
+                        <th>주문비고</th>
+                        <th>현금영수증</th>
+                        <th>입금일</th>
+                        <th>판매금액</th>
+                        <th>배송일</th>
+                        <th>배송비</th>
+                        <th>운송장번호</th>
+                        <th>주문자특이사항</th>
+                    </tr>
+
+<!--                    <tr th:each="status: ${statusList}">
+                        <td>[[${status.ono}]]</td>
+                        <td>[[${#temporals.format(status.createdDate, 'yy/MM/dd')}]]</td>
+                        <td>[[${status.orderCode}]]</td>
+                        <td>[[${status.tomatoQuality.tomatoQualityName}]]</td>
+                        <td>[[${status.tomatoSize.tomatoSizeName}]]</td>
+                        <td>[[${status.eachQuantity}]]</td>
+                        <td>[[${status.orderQuantity}]]</td>
+                        <td>[[${status.ordererName}]]</td>
+                        <td>[[${status.ordererMobile}]]</td>
+                        <td>[[${status.receiverName}]]</td>
+                        <td>[[${status.receiverMobile}]]</td>
+                        <td>[[${status.receiverAddress}]]</td>
+                        <td>[[${status.deliveryMessage}]]</td>
+                        <td>[[${status.orderNote}]]</td>
+                        <td>[[${status.cashReceipt}]]</td>
+                        <td>[[${status.payDate}]]</td>
+                        <td>[[${status.orderPrice}]]</td>
+                        <td>[[${status.sentDate}]]</td>
+                        <td>[[${status.deliveryFee}]]</td>
+                        <td>[[${status.invoice}]]</td>
+                        <td>[[${status.ordererNote}]]</td>
+                   </tr>-->
+                </table>
+
+            </div>
+            <!--End status Box-->
+
+
+        </div>
+    </th:block>
+</th:block>

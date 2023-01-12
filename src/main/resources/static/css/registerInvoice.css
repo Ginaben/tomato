@@ -1,0 +1,18 @@
+.temp {
+    background-color: burlywood;
+}
+
+/*Search Box*/
+
+/*Unregistered Invoice Box*/
+.unregisterInvoice-top {
+    display: flex;
+}
+
+.unregisterInvoice-top-left {
+    flex: 1;
+}
+.unregisterInvoice-top-right {
+    flex: 1;
+    text-align: right;
+}

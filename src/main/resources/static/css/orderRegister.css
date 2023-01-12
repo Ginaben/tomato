@@ -1,0 +1,28 @@
+/*Global*/
+.span01 {
+    display: inline-block;
+    border: 1px solid #2E2E2E;
+    width: 8em;
+    font-size: 1.2em;
+}
+.span02 {
+    display: inline-block;
+    border: 1px solid #2E2E2E;
+    width: 8em;
+    padding-left: 0.7em;
+    font-size: 1.2em;
+}
+
+.inputText {
+    font-size: 1.15em;
+}
+
+.div01 {
+    margin: 0.5em 0 1em 1em;
+}
+/*Top*/
+
+/*First*/
+/*Second*/
+/*Third*/
+/*Forth*/

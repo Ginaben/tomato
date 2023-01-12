@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<th:block th:replace="~{basicTemplate :: setContent(~{this::content})}">
+    <th:block th:fragment="content">
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+                integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+                crossorigin="anonymous"></script>
+        <link href="https://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.min.css" rel="stylesheet">
+        <script src="https://code.jquery.com/ui/1.10.2/jquery-ui.min.js"></script>
+
+        <link rel="stylesheet" th:href="@{/css/registerInvoice.css}"/>
+
+        <div class="wrapper">
+
+            <!--Title-->
+            <div class="title bold">송장번호 등록하기</div>
+
+            <!--SearchBox-->
+            <div class="searchBox temp">
+                검색검색
+                <div>
+                    <button class="btn">검색</button>
+                    <button class="cancelBtn">초기화</button>
+                </div>
+
+            </div>
+            <!--End search box-->
+
+            <!--Unregistered invoice Box-->
+            <div class="unregisterInvoiceBox temp">
+                <div class="unregisterInvoice-top">
+                    <div class="unregisterInvoice-top-left">
+                        <span>운송장번호 미등록 목록</span>
+                    </div>
+                    <div class="unregisterInvoice-top-right">
+                        <button class="btn">송장엑셀등록</button>
+                    </div>
+                </div>
+
+                <!--unregistered invoice table-->
+                <div>
+                    <table>
+                        <thead>
+                        <tr>
+                            <th>제목제목</th>
+                        </tr>
+                        </thead>
+
+                        <tbody>
+                        <tr>
+                            <td>내용내용</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!--End unregistered Invoice Box-->
+
+
+        </div>
+
+    </th:block>
+</th:block>

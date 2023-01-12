@@ -1,14 +1,54 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org"
-      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5"
-      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-      layout:decorator="layouts/layout">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-테스트 <h1>예진아 사랑한다</h1>
-<h1 th:text="${num}"></h1>
-</body>
+<th:block th:replace="~{basicTemplate :: setContent(~{this::content})}" xmlns:th="http://www.w3.org/1999/xhtml">
+    <th:block th:fragment="content">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@300&display=swap" rel="stylesheet">
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+                integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+                crossorigin="anonymous"></script>
+
+        <link rel="stylesheet" th:href="@{/css/dashboard.css}"/>
+
+        <div class="wrapper">
+
+            <!--Title-->
+            <div class="title bold">대시보드</div>
+
+            <div class="dashboard-wrapper">
+                <div class="left temp">
+                    left
+                </div>
+                <div class="right temp">
+                    right
+                </div>
+
+            </div>
+
+
+
+
+
+        </div>
+
+
+
+
+
+
+
+        <script th:inline="javascript">
+            function goStore(sno) {
+                //alert('goStore');
+                /*[+
+                var url = [[@{page/detail}]] + "/" +sno ;
+                +]*/
+                location.href = url;
+            }
+
+        </script>
+
+    </th:block>
+</th:block>
 </html>
