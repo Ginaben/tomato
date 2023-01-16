@@ -1,3 +1,4 @@
+<!--
 <!DOCTYPE html>
 <th:block th:replace="~{basicTemplate :: setContent(~{this::content})}" xmlns:th="http://www.w3.org/1999/xhtml">
     <th:block th:fragment="content">
@@ -14,18 +15,18 @@
 
         <div class="wrapper">
 
-            <!--Title-->
+            &lt;!&ndash;Title&ndash;&gt;
             <div class="title bold">주문입력하기</div>
 
-            <!--Top-->
+            &lt;!&ndash;Top&ndash;&gt;
             <div class="top">
                 <span class="ast bold">* 필수입력</span>
             </div>
 
-            <!--register order form-->
+            &lt;!&ndash;register order form&ndash;&gt;
             <div id="register-order-div">
                 <form th:action="@{'/orderRegister/add'}" th:object="${addOrders}" id="orderForm" method="post">
-                    <!--First-->
+                    &lt;!&ndash;First&ndash;&gt;
                     <div class="first">
                         <div class="first-first div01">
                             <span class="ast bold">*</span>
@@ -38,7 +39,7 @@
                                 </div>
                             </div>
                         </div>
-                        <!--End first-first-->
+                        &lt;!&ndash;End first-first&ndash;&gt;
 
                         <div class="first-second div01">
                             <span class="ast bold">*</span>
@@ -51,7 +52,7 @@
                                 <input type="hidden" id="array" name="array"/>
                             </div>
                         </div>
-                        <!--End first-second-->
+                        &lt;!&ndash;End first-second&ndash;&gt;
 
                         <div class="first-third">
                             <span class="ast bold">*</span>
@@ -62,10 +63,10 @@
                             <span class="ast">2.5kg기준. 숫자만 입력가능. 2개이상 입력시 자동으로 합포장 저장됨</span>
                         </div>
                     </div>
-                    <!--End First-->
+                    &lt;!&ndash;End First&ndash;&gt;
                     <hr>
 
-                    <!--Second-->
+                    &lt;!&ndash;Second&ndash;&gt;
                     <div class="second">
                         <div>
                             <span class="ast bold">*</span>
@@ -105,11 +106,11 @@
                             <span class="ast">보내는분 출력 필요할때 배송메모에 입력</span>
                         </div>
                     </div>
-                    <!--End Second-->
+                    &lt;!&ndash;End Second&ndash;&gt;
 
                     <hr>
 
-                    <!--Third-->
+                    &lt;!&ndash;Third&ndash;&gt;
                     <div class="third">
                         <div>
                             <span class="span02 bold">현금영수증</span>
@@ -132,29 +133,29 @@
                             <span><input type="text" th:field="*{orderNote}" id="orderNote" placeholder="VIP"></span>
                         </div>
                     </div>
-                    <!--End Third-->
+                    &lt;!&ndash;End Third&ndash;&gt;
 
-                    <!--ECT-->
+                    &lt;!&ndash;ECT&ndash;&gt;
                     <div style="display: none">
                         <input type="text" th:field="*{sentDate}" id="sentDate">
                         <input type="text" th:field="*{deliveryFee}" id="deliveryFee">
                         <input type="text" th:field="*{invoice}" id="invoice">
                     </div>
 
-                    <!--Forth-->
+                    &lt;!&ndash;Forth&ndash;&gt;
                     <div class="forth">
                         <button class="btn" id="addOrders" type="submit">저장하기</button>
-                        <!--저장 버튼 타입 바꿔야 할수도..-->
+                        &lt;!&ndash;저장 버튼 타입 바꿔야 할수도..&ndash;&gt;
                         <button class="cancelBtn"><a th:href="@{/}">취소</a></button>
                     </div>
-                    <!--End Forth-->
+                    &lt;!&ndash;End Forth&ndash;&gt;
 
                 </form>
             </div>
-            <!--End register-order-div-->
+            &lt;!&ndash;End register-order-div&ndash;&gt;
 
         </div>
-        <!--End wrapper-->
+        &lt;!&ndash;End wrapper&ndash;&gt;
 
     </th:block>
-</th:block>
+</th:block>-->

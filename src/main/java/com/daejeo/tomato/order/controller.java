@@ -11,13 +11,13 @@ public class controller {
 
     private final service service;
 
-    @GetMapping("/order")
+    @GetMapping("/orderRegister")
     public String index(Model model){
 
 
         model.addAttribute("num", service.get());
 
 
-        return "/order";
+        return "/orderRegister";
     }
 }
