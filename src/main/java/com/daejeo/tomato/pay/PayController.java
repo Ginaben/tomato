@@ -10,8 +10,8 @@ public class PayController {
 
     private final PayService payService;
     
-    @PostMapping("/regist")
-    public void regist() {
+    @PostMapping("/payRegist")
+    public void payRegist() {
 
     }
 

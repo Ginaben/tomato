@@ -10,8 +10,8 @@ public class SatatusController {
 
     private final SatatusService satatusService;
     
-    @PostMapping("/regist")
-    public void regist() {
+    @PostMapping("/statusRegist")
+    public void statusRegist() {
 
     }
 
