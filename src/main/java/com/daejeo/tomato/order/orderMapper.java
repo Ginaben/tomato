@@ -7,8 +7,15 @@ import java.util.Map;
 import java.util.Objects;
 
 @Mapper
-public interface orderMapper {
+public interface OrderMapper {
 
 
     List<Map<String, Objects>> getDual();
+
+    //주문입력
+    int orderInfoInsert(OrderReqVo orderReqVo);
+    int ordererInsert(OrderReqVo orderReqVo);
+    int receiverInsert(OrderReqVo orderReqVo);
+
+
 }

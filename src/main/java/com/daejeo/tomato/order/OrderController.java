@@ -7,22 +7,19 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-
-import java.util.Map;
 
 @Controller
 @AllArgsConstructor
 @Slf4j
-public class controller {
+public class OrderController {
 
-    private final service service;
+    private final OrderService OrderService;
 
     @GetMapping("/orderRegister")
     public String index(Model model){
 
 
-        model.addAttribute("num", service.get());
+        model.addAttribute("num", OrderService.get());
 
 
         return "/orderRegister";

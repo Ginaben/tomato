@@ -1,6 +1,7 @@
 package com.daejeo.tomato.order;
 
 import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -9,12 +10,16 @@ import java.util.Objects;
 
 @AllArgsConstructor
 @Service
-public class service {
+@Slf4j
+public class OrderService {
 
-    private final orderMapper orderMapper;
+    private final OrderMapper orderMapper;
 
     public List<Map<String, Objects>> get(){
 
         return orderMapper.getDual();
     }
+
+    //주문 입력
+
 }
