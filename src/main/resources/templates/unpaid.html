@@ -49,6 +49,26 @@
                         <th>주문자특이사항</th>
                     </tr>
 
+                    <tr th:each="status: ${unPaidList}">
+                        <td>[[${status.registDt}]]</td>
+                        <td>[[${status.tmtOrdIdx}]]</td>
+                        <td>[[${status.tmtPpNm}]]</td>
+                        <td>공백</td>
+                        <td>[[${status.ordererNm}]]</td>
+                        <td>[[${status.ordererMobile}]]</td>
+                        <td>[[${status.receiverNm}]]</td>
+                        <td>[[${status.receiverMobile}]]</td>
+                        <td>[[${status.receiverAdr}]]</td>
+                        <td>[[${status.shipMemo}]]</td>
+                        <td>[[${status.note}]]</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
                 </table>
             </div>
             <!--End unpaid status Box-->

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.daejeo.tomato.pay.PayMapper">
+
+    <select id="getUnpaidList" resultType="com.daejeo.tomato.pay.UnpaidVo">
+        select
+                ttoi.regist_dt
+             ,	ttoi.tmt_ord_idx
+             ,	ttoi .tmt_pp_cd as 'tmt_pp_nm'
+	         ,   toi.orderer_nm
+             ,   toi.orderer_mobile
+             ,   tri.receiver_nm
+             ,   tri.receiver_mobile
+             ,   tri.receiver_adr
+             ,   ttoi.ship_memo
+             ,  ttoi.note
+        from tb_tomato_order_info ttoi
+                 left join tb_orderer_info toi
+                           on ttoi.orderer_idx = toi.orderer_idx
+                 left join tb_receiver_info tri
+                           on ttoi.receiver_idx  = tri.receiver_idx
+        where 1=1
+          and ttoi.deposit_yn = 'N'
+    </select>
+
+
+</mapper>
