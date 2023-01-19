@@ -27,12 +27,20 @@ public class InvoiceController {
 
     private final InvoiceService invoiceService;
 
+    @GetMapping("/invoiceExport")
+    public String invoiceExport(HttpServletRequest request, HttpServletResponse response, Model model) {
+
+//        model.addAttribute("",);
+
+        return "/exportInvoice";
+    }
+
     @GetMapping("/invoiceRegist")
     public String invoiceRegist(HttpServletRequest request, HttpServletResponse response, Model model) {
 
 //        model.addAttribute("",);
 
-        return "/exportInvoice";
+        return "/registerInvoice";
     }
 
     @GetMapping("/excelDownload")
