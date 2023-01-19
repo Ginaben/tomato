@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="layouts/layout">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+테스트 <h1>아예어요어요우유의이</h1>
+<h1 th:text="${num.get(1).get('tmt_ord_idx')}"></h1>
+<form method="post" action="/order/regist">
+    <input type="text" name="testa"/>
+    <input type="text" name="testb"/>
+    <input type="text" name="testc"/>
+    <input type="submit" />
+</form>
+</body>
+</html>

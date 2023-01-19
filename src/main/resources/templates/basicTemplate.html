@@ -43,11 +43,11 @@
                         <!-- Nav -->
                         <nav id="nav">
                             <ul>
-                                <li class="nav-list"><a th:href="@{/orderRegister}">주문입력하기</a></li>
-                                <li class="nav-list"><a th:href="@{/exportInvoice}">송장용엑셀</a></li>
-                                <li class="nav-list"><a th:href="@{/registerInvoice}">송장등록하기</a></li>
-                                <li class="nav-list"><a th:href="@{/status}">주문배송현황</a></li>
-                                <li class="nav-list"><a th:href="@{/unpaid}">미입금조회</a></li>
+                                <li class="nav-list"><a href="/order/orderRegister">주문입력하기</a></li>
+                                <li class="nav-list"><a href="/invoice/invoiceRegist">송장용엑셀</a></li>
+                                <li class="nav-list"><a href="@{/registerInvoice}">송장등록하기</a></li>
+                                <li class="nav-list"><a href="/status/statusRegist">주문배송현황</a></li>
+                                <li class="nav-list"><a href="/pay/payRegist">미입금조회</a></li>
                             </ul>
                         </nav>
                     </header>
