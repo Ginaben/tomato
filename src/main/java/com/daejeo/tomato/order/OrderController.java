@@ -15,27 +15,31 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Slf4j
 public class OrderController {
 
-    private final OrderService OrderService;
+    private OrderService orderService;
 
     @GetMapping("/orderRegister")
-    public String index(Model model){
+    public String index(Model model) {
 
 
-        model.addAttribute("num", OrderService.get());
+        model.addAttribute("num", orderService.get());
 
 
         return "/orderRegister";
     }
 
-    @PostMapping("/order/regist")
+/*    @PostMapping("/order/regist")
     public String orderRegist(testDto testDto1, Model m) {
         log.info(testDto1.getTesta());
         log.info(testDto1.getTestb());
         log.info(testDto1.getTestc());
         m.addAttribute("num", "success");
-
         return "redirect:/order";
+    }*/
 
+    @PostMapping("/orderRegister")
+    public String orderInsert(OrderReqVo orderReqVo) throws Exception{
+        orderService.orderInsert(orderReqVo);
+        return "redirect:/order";
     }
 
 }

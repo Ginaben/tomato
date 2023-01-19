@@ -47,7 +47,7 @@
     INSERT INTO tb_orderer_info (
             orderer_idx
         ,   orderer_nm
-        ,   orderer_number
+        ,   orderer_mobile
         ,   orderer_adr
         ,   orderer_detail_adr
         ,   orderer_zip_num
@@ -56,7 +56,7 @@
         ) VALUES (
             #{ordererIdx}
         ,   #{ordererNm}
-        ,   #{ordererNumber}
+        ,   #{ordererMobile}
         ,   #{ordererAdr}
         ,   #{ordererDetailAdr}
         ,   #{ordererZipNum}
@@ -70,7 +70,7 @@
         INSERT INTO tb_orderer_info (
             receiver_idx
         ,   receiver_nm
-        ,   receiver_phone
+        ,   receiver_mobile
         ,   receiver_adr
         ,   receiver_detail_adr
         ,   receiver_zip_num
@@ -79,7 +79,7 @@
         ) VALUES (
             #{receiverIdx}
         ,   #{receiverrNm}
-        ,   #{receiverPhone}
+        ,   #{receiverMobile}
         ,   #{receiverAdr}
         ,   #{receiverDetailAdr}
         ,   #{receiverZipNum}
@@ -87,5 +87,18 @@
         ,   #{updateDt}
         )
     </insert>
+
+    <!--주문자 중복체크-->
+    <select id="ordererDupCheck" parameterType="com.daejeo.tomato.order.OrderReqVo" resultType="String">
+        SELECT
+            count(orderer_mobile) as orderer_mobile
+        FROM tb_orderer_info
+        WHERE 1=1
+        <if test =' ordererMobile != null and ordererMobile != "" '>
+            and ordererMobile = #{orderer_mobile}
+        </if>
+    </select>
+
+
 
 </mapper>

@@ -13,9 +13,9 @@ public interface OrderMapper {
     List<Map<String, Objects>> getDual();
 
     //주문입력
-    int orderInfoInsert(OrderReqVo orderReqVo);
-    int ordererInsert(OrderReqVo orderReqVo);
-    int receiverInsert(OrderReqVo orderReqVo);
+    public int orderInfoInsert(OrderReqVo orderReqVo);
+    public int ordererInsert(OrderReqVo orderReqVo);
+    public int receiverInsert(OrderReqVo orderReqVo);
 
 
 }
