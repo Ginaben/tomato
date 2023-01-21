@@ -49,9 +49,9 @@
                         <th>주문자특이사항</th>
                     </tr>
 
-                    <tr th:each="status: ${unPaidList}">
+                    <tr th:each="status, idx: ${unPaidList}">
                         <td>[[${status.registDt}]]</td>
-                        <td>[[${status.tmtOrdIdx}]]</td>
+                        <td>[[${idx.index + 1}]]</td>
                         <td>[[${status.tmtPpNm}]]</td>
                         <td>공백</td>
                         <td>[[${status.ordererNm}]]</td>
@@ -61,13 +61,13 @@
                         <td>[[${status.receiverAdr}]]</td>
                         <td>[[${status.shipMemo}]]</td>
                         <td>[[${status.note}]]</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td>[[${status.cashRecptNum}]]</td>
+                        <td>[[${status.depositDt}]]</td>
+                        <td>[[${status.salesPrice}]]</td>
+                        <td>[[${status.shipDt}]]</td>
+                        <td>[[${status.shippingFee}]]</td>
+                        <td>[[${status.waybillNum}]]</td>
+                        <td>[[${status.ordererEtc}]]</td>
                     </tr>
                 </table>
             </div>

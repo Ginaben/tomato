@@ -17,4 +17,13 @@ public class UnpaidVo {
     String receiverAdr;
     String shipMemo;
     String note;
+    String cashRecptNum;
+    String depositDt;
+    Long salesPrice;
+    String shipDt;
+    Long shippingFee;
+    String waybillNum;
+    String ordererEtc;
+
+
 }

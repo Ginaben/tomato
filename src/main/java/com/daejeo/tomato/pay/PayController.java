@@ -1,5 +1,6 @@
 package com.daejeo.tomato.pay;
 
+import com.daejeo.tomato.pay.Impl.PayServiceImpl;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,7 +17,7 @@ import java.util.List;
 @AllArgsConstructor
 public class PayController {
 
-    private final PayService payService;
+    private final PayServiceImpl payService;
     
     @GetMapping("/payRegist")
     public String payRegist(HttpServletResponse response, HttpServletRequest request, Model model) {

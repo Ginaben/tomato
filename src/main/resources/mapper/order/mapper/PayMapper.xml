@@ -15,6 +15,13 @@
              ,   tri.receiver_adr
              ,   ttoi.ship_memo
              ,  ttoi.note
+             ,  ttoi.cash_recpt_num
+             ,  ttoi.deposit_dt
+             ,  ttoi.sales_price
+             ,  '2023.02.14' as 'ship_dt'
+             ,  '10000000' as 'shipping_fee'
+             ,  '501103020' as 'waybill_num'
+             , toi.orderer_etc
         from tb_tomato_order_info ttoi
                  left join tb_orderer_info toi
                            on ttoi.orderer_idx = toi.orderer_idx
@@ -22,6 +29,7 @@
                            on ttoi.receiver_idx  = tri.receiver_idx
         where 1=1
           and ttoi.deposit_yn = 'N'
+        order by ttoi.regist_dt ASC
     </select>
 
 
