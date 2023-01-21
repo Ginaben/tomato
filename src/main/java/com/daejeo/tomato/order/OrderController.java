@@ -1,21 +1,23 @@
 package com.daejeo.tomato.order;
 
 import com.daejeo.tomato.order.dto.testDto;
+import com.daejeo.tomato.order.impl.OrderServiceImpl;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.boot.Banner;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
-@RequestMapping("order")
+@RequestMapping("/order")
 @AllArgsConstructor
 @Slf4j
 public class OrderController {
 
-    private OrderService orderService;
+    private OrderServiceImpl orderService;
 
     @GetMapping("/orderRegister")
     public String index(Model model) {
@@ -36,10 +38,13 @@ public class OrderController {
         return "redirect:/order";
     }*/
 
-    @PostMapping("/orderRegister")
+    @PostMapping("/orderRegister/add")
     public String orderInsert(OrderReqVo orderReqVo) throws Exception{
         orderService.orderInsert(orderReqVo);
-        return "redirect:/order";
+//        orderService.receiverInsert(orderReqVo);
+//        orderService.orderInfoInsert(orderReqVo);
+
+        return "redirect:/order/orderRegister";
     }
 
 }

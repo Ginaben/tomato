@@ -8,6 +8,9 @@ public interface OrderService {
 
     public List<Map<String, Objects>> get();
     //주문 등록
-    public int orderInsert(OrderReqVo orderReqVo) throws Exception;
+    int orderInsert(OrderReqVo orderReqVo) throws Exception;
+     int ordererInsert(OrderReqVo orderReqVo) throws Exception;
+     int receiverInsert(OrderReqVo orderReqVo) throws Exception;
+     int orderInfoInsert(OrderReqVo orderReqVo) throws Exception;
 
 }

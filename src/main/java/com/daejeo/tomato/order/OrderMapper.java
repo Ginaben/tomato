@@ -13,9 +13,12 @@ public interface OrderMapper {
     List<Map<String, Objects>> getDual();
 
     //주문입력
-    public int orderInfoInsert(OrderReqVo orderReqVo);
-    public int ordererInsert(OrderReqVo orderReqVo);
-    public int receiverInsert(OrderReqVo orderReqVo);
+    int orderInfoInsert(OrderReqVo orderReqVo);
+    int ordererInsert(OrderReqVo orderReqVo);
+    int receiverInsert(OrderReqVo orderReqVo);
 
+    //중복체크
+    Integer ordererDupCheck(OrderReqVo orderReqVo);
+    Integer receiverDupCheck(OrderReqVo orderReqVo);
 
 }

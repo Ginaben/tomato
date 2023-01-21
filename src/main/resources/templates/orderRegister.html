@@ -24,134 +24,134 @@
             </div>
 
             <!--register order form-->
-<!--            <div id="register-order-div">-->
-<!--                <form th:action="@{'/orderRegister/add'}" th:object="${addOrders}" id="orderForm" method="post">-->
-<!--                    &lt;!&ndash;First&ndash;&gt;-->
-<!--                    <div class="first">-->
-<!--                        <div class="first-first div01">-->
-<!--                            <span class="ast bold">*</span>-->
-<!--                            <span class="bold span01">토마토 품질</span>-->
-<!--                            <span class="ast">토마토 품질 선택은 하나만 가능. 다른 품질은 따로 작성해주세요.</span>-->
-<!--                            <div>-->
-<!--                                <div th:each="tomatoQuality: ${tomatoQuality}" style="display: inline-block">-->
-<!--                                    <input type="radio" th:field="*{tomatoQuality}" th:value="${tomatoQuality.name()}">-->
-<!--                                    <label class="inputText" th:for="${#ids.prev('tomatoQuality')}" th:text="${tomatoQuality.tomatoQualityName}"></label>-->
-<!--                                </div>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                        &lt;!&ndash;End first-first&ndash;&gt;-->
+            <div id="register-order-div">
+                <form th:action="@{'/order/orderRegister/add'}" id="orderForm" method="post">
+                    <!--First-->
+                    <div class="first">
+                        <div class="first-first div01">
+                            <span class="ast bold">*</span>
+                            <span class="bold span01">토마토 품질</span>
+                            <span class="ast">토마토 품질 선택은 하나만 가능. 다른 품질은 따로 작성해주세요.</span>
+                            <div>
+<!--                                <div th:each="tomatoQuality: ${tomatoQuality}" style="display: inline-block">
+                                    <input type="radio" name="tomatoQuality}" th:value="${tomatoQuality.name()}">
+                                    <label class="inputText" th:for="${#ids.prev('tomatoQuality')}" th:text="${tomatoQuality.tomatoQualityName}"></label>
+                                </div>-->
+                            </div>
+                        </div>
+                        <!--End first-first-->
 
-<!--                        <div class="first-second div01">-->
-<!--                            <span class="ast bold">*</span>-->
-<!--                            <span class="bold span01">토마토 크기</span>-->
-<!--                            <div>-->
-<!--                                <div th:each="tomatoSize: ${tomatoSize}" style="display: inline-block">-->
-<!--                                    <input type="checkbox" th:field="*{tomatoSize}" name="tomatoSize" th:value="${tomatoSize.name()}">-->
-<!--                                    <label class="inputText" th:for="${#ids.prev('tomatoSize')}" th:text="${tomatoSize.tomatoSizeName}"></label>-->
-<!--                                </div>-->
-<!--                                <input type="hidden" id="array" name="array"/>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                        &lt;!&ndash;End first-second&ndash;&gt;-->
+                        <div class="first-second div01">
+                            <span class="ast bold">*</span>
+                            <span class="bold span01">토마토 크기</span>
+         <!--                   <div>
+                                <div th:each="tomatoSize: ${tomatoSize}" style="display: inline-block">
+                                    <input type="checkbox" name="tomatoSize}" name="tomatoSize" th:value="${tomatoSize.name()}">
+                                    <label class="inputText" th:for="${#ids.prev('tomatoSize')}" th:text="${tomatoSize.tomatoSizeName}"></label>
+                                </div>
+                                <input type="hidden" id="array" name="array"/>
+                            </div>-->
+                        </div>
+                        <!--End first-second-->
 
-<!--                        <div class="first-third">-->
-<!--                            <span class="ast bold">*</span>-->
-<!--                            <span class="bold span01">수량</span>-->
-<!--                            <span><input type="text" th:field="*{orderQuantity}" id="orderQuantity"-->
-<!--                                         placeholder="예) 3" numOnly></span>-->
-<!--                            <span>개</span>-->
-<!--                            <span class="ast">2.5kg기준. 숫자만 입력가능. 2개이상 입력시 자동으로 합포장 저장됨</span>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                    &lt;!&ndash;End First&ndash;&gt;-->
-<!--                    <hr>-->
+                        <div class="first-third">
+                            <span class="ast bold">*</span>
+                            <span class="bold span01">수량</span>
+<!--                            <span><input type="text" name="orderQuantity}" id="orderQuantity"
+                                         placeholder="예) 3" numOnly></span> -->
+                            <span>개</span>
+                            <span class="ast">2.5kg기준. 숫자만 입력가능. 2개이상 입력시 자동으로 합포장 저장됨</span>
+                        </div>
+                    </div>
+                    <!--End First-->
+                    <hr>
 
-<!--                    &lt;!&ndash;Second&ndash;&gt;-->
-<!--                    <div class="second">-->
-<!--                        <div>-->
-<!--                            <span class="ast bold">*</span>-->
-<!--                            <span class="bold span01">주문자</span>-->
-<!--                            <span><input type="text" th:field="*{ordererName}" id="ordererName" placeholder="신재희"></span>-->
-<!--                            <span class="btn">검색</span>-->
-<!--                        </div>-->
-<!--                        <div>-->
-<!--                            <span class="ast bold">*</span>-->
-<!--                            <span class="span01 bold">주문자 연락처</span>-->
-<!--                            <span><input type="text" th:field="*{ordererMobile}" id="ordererMobile"-->
-<!--                                         placeholder="010-0000-0000" maxlength="13" addHyphen></span>-->
+                    <!--Second-->
+                    <div class="second">
+                        <div>
+                            <span class="ast bold">*</span>
+                            <span class="bold span01">주문자</span>
+                            <span><input type="text" name="ordererNm" id="ordererNm" placeholder="신재희"></span>
+                            <span class="btn">검색</span>
+                        </div>
+                        <div>
+                            <span class="ast bold">*</span>
+                            <span class="span01 bold">주문자 연락처</span>
+                            <span><input type="text" name="ordererMobile" id="ordererMobile"
+                                         placeholder="010-0000-0000" maxlength="13" addHyphen></span>
 
-<!--                        </div>-->
-<!--                        <div>-->
-<!--                            <span class="ast bold">*</span>-->
-<!--                            <span class="span01 bold">받는사람</span>-->
-<!--                            <span><input type="text" th:field="*{receiverName}" id="receiverName" placeholder="이예진"></span>-->
-<!--                            <span class="cancelBtn">새로입력</span>-->
+                        </div>
+                        <div>
+                            <span class="ast bold">*</span>
+                            <span class="span01 bold">받는사람</span>
+                            <span><input type="text" name="receiverNm" id="receiverNm" placeholder="이예진"></span>
+                            <span class="cancelBtn">새로입력</span>
 
-<!--                        </div>-->
-<!--                        <div>-->
-<!--                            <span class="ast bold">*</span>-->
-<!--                            <span class="span01 bold">받는사람 연락처</span>-->
-<!--                            <span><input type="text" th:field="*{receiverMobile}" id="receiverMobile"-->
-<!--                                         placeholder="010-0000-0000" maxlength="13" addHyphen></span>-->
+                        </div>
+                        <div>
+                            <span class="ast bold">*</span>
+                            <span class="span01 bold">받는사람 연락처</span>
+                            <span><input type="text" name="receiverMobile" id="receiverMobile"
+                                         placeholder="010-0000-0000" maxlength="13" addHyphen></span>
 
-<!--                        </div>-->
-<!--                        <div>-->
-<!--                            <span class="ast bold">*</span>-->
-<!--                            <span class="span01 bold">받는사람 주소</span>-->
-<!--                        </div>-->
-<!--                        <div>-->
-<!--                            <span class="span02 bold">배송메모</span>-->
-<!--                            <span><input type="text" th:field="*{deliveryMessage}" id="deliveryMessage" name="deliveryMessage"-->
-<!--                                         placeholder="예) 보내는분: 신재희, 문앞에 두고 가주세요"></span>-->
-<!--                            <span class="ast">보내는분 출력 필요할때 배송메모에 입력</span>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                    &lt;!&ndash;End Second&ndash;&gt;-->
+                        </div>
+                        <div>
+                            <span class="ast bold">*</span>
+                            <span class="span01 bold">받는사람 주소</span>
+                        </div>
+                        <div>
+                            <span class="span02 bold">배송메모</span>
+                            <span><input type="text" name="shipMemo" id="shipMemo"
+                                         placeholder="예) 보내는분: 신재희, 문앞에 두고 가주세요"></span>
+                            <span class="ast">보내는분 출력 필요할때 배송메모에 입력</span>
+                        </div>
+                    </div>
+                    <!--End Second-->
 
-<!--                    <hr>-->
+                    <hr>
 
-<!--                    &lt;!&ndash;Third&ndash;&gt;-->
-<!--                    <div class="third">-->
-<!--                        <div>-->
-<!--                            <span class="span02 bold">현금영수증</span>-->
-<!--                            <span><input type="text" th:field="*{cashReceipt}" id="cashReceipt"-->
-<!--                                         placeholder="123456789" numOnly></span>-->
-<!--                        </div>-->
-<!--                        <div>-->
-<!--                            <span class="span02 bold">입금일</span>-->
-<!--                            <span><input type="date" th:field="*{payDate}" id="payDate" placeholder="2022-01-01"></span>-->
-<!--                        </div>-->
-<!--                        <div>-->
-<!--                            <span class="span02 bold">판매가격</span>-->
-<!--                            <span><input type="text" th:field="*{orderPrice}" id="orderPrice"-->
-<!--                                         placeholder="10,000" addComma></span>-->
-<!--                            <span>원</span>-->
-<!--                            <span class="ast">숫자만 입력가능</span>-->
-<!--                        </div>-->
-<!--                        <div>-->
-<!--                            <span class="span02 bold">비고</span>-->
-<!--                            <span><input type="text" th:field="*{orderNote}" id="orderNote" placeholder="VIP"></span>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                    &lt;!&ndash;End Third&ndash;&gt;-->
+                    <!--Third-->
+                    <div class="third">
+                        <div>
+                            <span class="span02 bold">현금영수증</span>
+                            <span><input type="text" name="cashRecptNum" id="cashRecptNum"
+                                         placeholder="123456789" numOnly></span>
+                        </div>
+                        <div>
+                            <span class="span02 bold">입금일</span>
+                            <span><input type="date" name="depositDt" id="depositDt" placeholder="2022-01-01"></span>
+                        </div>
+                        <div>
+                            <span class="span02 bold">판매가격</span>
+                            <span><input type="text" name="salesPrice" id="orderPrice"
+                                         placeholder="10,000" addComma></span>
+                            <span>원</span>
+                            <span class="ast">숫자만 입력가능</span>
+                        </div>
+                        <div>
+                            <span class="span02 bold">비고</span>
+                            <span><input type="text" name="note" id="note" placeholder="VIP"></span>
+                        </div>
+                    </div>
+                    <!--End Third-->
 
-<!--                    &lt;!&ndash;ECT&ndash;&gt;-->
-<!--                    <div style="display: none">-->
-<!--                        <input type="text" th:field="*{sentDate}" id="sentDate">-->
-<!--                        <input type="text" th:field="*{deliveryFee}" id="deliveryFee">-->
-<!--                        <input type="text" th:field="*{invoice}" id="invoice">-->
-<!--                    </div>-->
+                    <!--ECT-->
+                    <div style="display: none">
+                        <input type="text" name="sentDate" id="sentDate">
+                        <input type="text" name="deliveryFee" id="deliveryFee">
+                        <input type="text" name="invoice" id="invoice">
+                    </div>
 
-<!--                    &lt;!&ndash;Forth&ndash;&gt;-->
-<!--                    <div class="forth">-->
-<!--                        <button class="btn" id="addOrders" type="submit">저장하기</button>-->
-<!--                        &lt;!&ndash;저장 버튼 타입 바꿔야 할수도..&ndash;&gt;-->
-<!--                        <button class="cancelBtn"><a th:href="@{/}">취소</a></button>-->
-<!--                    </div>-->
-<!--                    &lt;!&ndash;End Forth&ndash;&gt;-->
+                    <!--Forth-->
+                    <div class="forth">
+                        <button class="btn" id="addOrders" type="submit">저장하기</button>
+                        <!--저장 버튼 타입 바꿔야 할수도..-->
+                        <button class="cancelBtn"><a th:href="@{/}">취소</a></button>
+                    </div>
+                    <!--End Forth-->
 
-<!--                </form>-->
-<!--            </div>-->
+                </form>
+            </div>
             <!--End register-order-div-->
 
         </div>

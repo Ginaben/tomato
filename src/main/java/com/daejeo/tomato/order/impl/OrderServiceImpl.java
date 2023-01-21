@@ -6,6 +6,7 @@ import com.daejeo.tomato.order.OrderService;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Map;
@@ -22,12 +23,42 @@ public class OrderServiceImpl implements OrderService {
         return orderMapper.getDual();
     }
 
-    //주문 등록
-    public int orderInsert(OrderReqVo orderReqVo) throws Exception {
-        orderMapper.ordererInsert(orderReqVo);
-        orderMapper.receiverInsert(orderReqVo);
-        int result = orderMapper.orderInfoInsert(orderReqVo);
+    @Override
+    @Transactional
+    public int orderInsert(OrderReqVo orderReqVo) throws Exception{
 
-        return result;
+        Integer ordererIdx = orderMapper.ordererDupCheck(orderReqVo);
+        if(ordererIdx == null){
+            orderMapper.ordererInsert(orderReqVo);
+        } else {
+            orderReqVo.setOrdererIdx(ordererIdx);
+        }
+
+        Integer receiverIdx = orderMapper.receiverDupCheck(orderReqVo);
+        if(receiverIdx == null){
+            orderMapper.receiverInsert(orderReqVo);
+        } else {
+            orderReqVo.setReceiveIdx(receiverIdx);
+        }
+
+        orderMapper.orderInfoInsert(orderReqVo);
+        return 1;
     }
+
+    @Override
+    public int ordererInsert(OrderReqVo orderReqVo) throws Exception {
+        return 0;
+    }
+
+    @Override
+    public int receiverInsert(OrderReqVo orderReqVo) throws Exception {
+        return 0;
+    }
+
+    @Override
+    public int orderInfoInsert(OrderReqVo orderReqVo) throws Exception {
+        return 0;
+    }
+
+
 }

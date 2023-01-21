@@ -10,31 +10,34 @@
     <!-- 주문 정보 입력 -->
     <insert id="orderInfoInsert" parameterType="com.daejeo.tomato.order.OrderReqVo">
         INSERT INTO tb_tomato_order_info (
-                tmt_order_idx
-            ,   tmt_pp_cd
+                tmt_pp_cd
             ,   tmt_pp_etc
             ,   tmt_size_json
-            ,   order_idx
-            ,   receive_idx
+            ,   orderer_idx
+            ,   receiver_idx
             ,   ship_memo
             ,   cash_recpt_num
-            ,   desposit_yn
+            ,   deposit_yn
             ,   deposit_dt
             ,   sales_price
             ,   note
             ,   regist_dt
             ,   update_dt
         ) VALUE (
-                #{tmtOrderIdx}
-            ,   #{tmtPpCd}
+                #{tmtPpCd}
             ,   #{tmtPpEct}
             ,   #{tmtSizeJson}
-            ,   #{orderIdx}
-            ,   #{receiveIdx}
+            ,   #{ordererIdx}
+            ,   #{receiverIdx}
             ,   #{shipMemo}
             ,   #{cashRecptNum}
             ,   #{depositYn}
+        <if test=" depositDt == null or depositDt == '' ">
+            ,   null
+        </if>
+        <if test=" depositDt != null and depositDt != '' ">
             ,   #{depositDt}
+        </if>
             ,   #{salesPrice}
             ,   #{note}
             ,   #{registDt}
@@ -43,10 +46,9 @@
     </insert>
 
     <!-- 주문자 정보 입력 -->
-    <insert id="ordererInsert" parameterType="com.daejeo.tomato.order.OrderReqVo">
+    <insert id="ordererInsert" parameterType="com.daejeo.tomato.order.OrderReqVo"  useGeneratedKeys="true" keyProperty="ordererIdx">
     INSERT INTO tb_orderer_info (
-            orderer_idx
-        ,   orderer_nm
+            orderer_nm
         ,   orderer_mobile
         ,   orderer_adr
         ,   orderer_detail_adr
@@ -54,8 +56,7 @@
         ,   regist_dt
         ,   update_dt
         ) VALUES (
-            #{ordererIdx}
-        ,   #{ordererNm}
+            #{ordererNm}
         ,   #{ordererMobile}
         ,   #{ordererAdr}
         ,   #{ordererDetailAdr}
@@ -63,13 +64,13 @@
         ,   #{registDt}
         ,   #{updateDt}
         )
+
     </insert>
 
     <!-- 수령인 정보 입력 -->
-    <insert id="receiverInsert" parameterType="com.daejeo.tomato.order.OrderReqVo">
-        INSERT INTO tb_orderer_info (
-            receiver_idx
-        ,   receiver_nm
+    <insert id="receiverInsert" parameterType="com.daejeo.tomato.order.OrderReqVo" useGeneratedKeys="true" keyProperty="receiverIdx">
+        INSERT INTO tb_receiver_info (
+            receiver_nm
         ,   receiver_mobile
         ,   receiver_adr
         ,   receiver_detail_adr
@@ -77,8 +78,7 @@
         ,   regist_dt
         ,   update_dt
         ) VALUES (
-            #{receiverIdx}
-        ,   #{receiverrNm}
+            #{receiverNm}
         ,   #{receiverMobile}
         ,   #{receiverAdr}
         ,   #{receiverDetailAdr}
@@ -89,13 +89,24 @@
     </insert>
 
     <!--주문자 중복체크-->
-    <select id="ordererDupCheck" parameterType="com.daejeo.tomato.order.OrderReqVo" resultType="String">
+    <select id="ordererDupCheck" parameterType="com.daejeo.tomato.order.OrderReqVo" resultType="Integer">
         SELECT
-            count(orderer_mobile) as orderer_mobile
+            orderer_idx
         FROM tb_orderer_info
         WHERE 1=1
         <if test =' ordererMobile != null and ordererMobile != "" '>
-            and ordererMobile = #{orderer_mobile}
+            and orderer_mobile = #{ordererMobile}
+        </if>
+    </select>
+
+    <!--받는사람 중복체크-->
+    <select id="receiverDupCheck" parameterType="com.daejeo.tomato.order.OrderReqVo" resultType="Integer">
+        SELECT
+            receiver_idx
+        FROM tb_receiver_info
+        WHERE 1=1
+        <if test =' receiverMobile != null and receiverMobile != "" '>
+            and receiver_mobile = #{receiverMobile}
         </if>
     </select>
 

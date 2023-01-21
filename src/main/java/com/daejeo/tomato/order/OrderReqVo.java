@@ -17,7 +17,7 @@ public class OrderReqVo {
     String cashRecptNum;
     String depositYn;
     String depositDt;
-    String salesPrice;
+    Long salesPrice;
     String note;
     String registDt;
     String updateDt;
@@ -32,7 +32,7 @@ public class OrderReqVo {
 
     //receiver info
     int receiverIdx;
-    String receiverrNm;
+    String receiverNm;
     String receiverMobile;
     String receiverAdr;
     String receiverDetailAdr;
