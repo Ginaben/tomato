@@ -57,9 +57,8 @@ public class InvoiceController {
 
         File file = ExcelUtils.exportExcel(
                 results,
-                new String[][]{new String[] {"주문번호","운송장번호","주소",
-                        "매칭카테고리(사용자)(변경불가)","쇼핑몰 카테고리(변경불가)","제목",
-                        "사용여부"}},
+                new String[][]{new String[] {"주문번호","토마토품질","수량",
+                        "받는분","받는분연락처","배송지", "배송메세지"}},
                 new String[]{
                         "order_idx","invoice_idx","address","category_name","mall_category_name","title",
                         "use_yn"
@@ -69,7 +68,7 @@ public class InvoiceController {
         if (file == null) {
             throw new Exception("파일을 생성 할 수 없습니다.");
         } else {
-            String fileName = "[쇼핑몰카테고리정보]엑셀 파일 다운로드.xlsx";
+            String fileName = "운송장 폼.xlsx";
 
             ExcelUtils.downloadFile(request, response, file, fileName);
         }
