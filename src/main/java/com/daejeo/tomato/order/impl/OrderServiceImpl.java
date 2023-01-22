@@ -45,20 +45,4 @@ public class OrderServiceImpl implements OrderService {
         return 1;
     }
 
-    @Override
-    public int ordererInsert(OrderReqVo orderReqVo) throws Exception {
-        return 0;
-    }
-
-    @Override
-    public int receiverInsert(OrderReqVo orderReqVo) throws Exception {
-        return 0;
-    }
-
-    @Override
-    public int orderInfoInsert(OrderReqVo orderReqVo) throws Exception {
-        return 0;
-    }
-
-
 }

@@ -1,12 +1,13 @@
-package com.daejeo.tomato.order;
+package com.daejeo.tomato.status;
 
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
-public class OrderReqVo {
-    //orderInfo
+public class StatusVo {
+
+    //order
     int tmtOrdIdx;
     String tmtPpCd;
     String tmtPpEct;
@@ -38,4 +39,6 @@ public class OrderReqVo {
     String receiverDetailAdr;
     String receiverZipNum;
 
+    //common_code
+    String code_nm;
 }

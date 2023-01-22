@@ -51,6 +51,26 @@
                         <th>운송장번호</th>
                         <th>주문자특이사항</th>
                     </tr>
+                    <tr th:each="status: ${statusList}">
+                        <td>[[${status.tmtOrdIdx}]]</td>
+                        <td>[[${status.tmtOrdIdx}]]</td>
+                        <td>[[${status.tmtOrdIdx}]]</td>
+                        <td>[[${status.tmtPpCd}]]</td>
+                        <td>[[${status.tmtSizeJson}]]</td>
+                        <td>[[${status.ordererNm}]]</td>
+                        <td>[[${status.ordererNm}]]</td>
+                        <td>[[${status.ordererNm}]]</td>
+                        <td>[[${status.ordererMobile}]]</td>
+                        <td>[[${status.receiverNm}]]</td>
+                        <td>[[${status.receiverMobile}]]</td>
+                        <td>[[${status.receiverAdr}]] [[${status.receiverDetailAdr}]]</td>
+                        <td>[[${status.shipMemo}]]</td>
+                        <td>[[${status.note}]]</td>
+                        <td>[[${status.cashRecptNum}]]</td>
+                        <td>[[${status.depositDt}]]</td>
+                        <td>[[${status.salesPrice}]]</td>
+
+                    </tr>
 
                 </table>
 
