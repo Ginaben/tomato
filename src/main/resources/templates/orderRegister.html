@@ -159,3 +159,43 @@
 
     </th:block>
 </th:block>
+
+<script>
+/*    $("#btnAllowanceInsert").on("click",function() {
+
+        if(!chkValidation({chkId:"#allowanceFrm", chkObj:"input"}) ){
+            return;
+        }
+
+        let urls = "/allowance/allowanceInsertAjax.do";
+        let param = $("#allowanceFrm").serialize();
+        $.ajaxCall({
+            url: urls
+            , data: param
+            , success: function( data, textStatus, jqXHR){
+
+                alert(data.errorMsg);
+
+                if(data.errorCode == "0000") {
+                    //입력항목 초기화
+                    $("#allowance_code").val("");
+                    $("#deadline_code").val("");
+                    $("#allowance_name").val("");
+                    $("#allowance_type").val("");
+                    $("#payout").val("");
+                    $("#pay_date").val("");
+                    $("#start_date").val("");
+                    $("#end_date").val("");
+                    $("#allowanceComment").val("");
+
+                    fn.popupClose('#layer_allowance');
+                    grdAllowance.readData(1, true);
+                }
+            },
+            error: function( jqXHR, textStatus, errorThrown) {
+                alert('<spring:message code="msgSYSTEM_ERROR"/>');
+            }
+        });
+    });*/
+
+</script>
