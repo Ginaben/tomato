@@ -40,5 +40,5 @@ public class StatusVo {
     String receiverZipNum;
 
     //common_code
-    String code_nm;
+    String codeNm;
 }
