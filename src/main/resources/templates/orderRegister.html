@@ -44,13 +44,23 @@
                         <div class="first-second div01">
                             <span class="ast bold">*</span>
                             <span class="bold span01">토마토 크기</span>
-         <!--                   <div>
-                                <div th:each="tomatoSize: ${tomatoSize}" style="display: inline-block">
-                                    <input type="checkbox" name="tomatoSize}" name="tomatoSize" th:value="${tomatoSize.name()}">
-                                    <label class="inputText" th:for="${#ids.prev('tomatoSize')}" th:text="${tomatoSize.tomatoSizeName}"></label>
-                                </div>
+                              <div>
+<!--                                <div th:each="tomatoSize: ${tomatoSize}" style="display: inline-block">-->
+                                    <input type="checkbox" id="tmtSizeLi" name="tmtSizeLi" value="bigsize">
+                                    <label class="inputText" for="tmtSizeLi" text="">특등급</label>
+                                  <span><input type="text" name="tmtSizeCntLi"
+                                               placeholder="예) 3" numOnly></span>
+                                  <input type="checkbox" id="tmtSizeLi1" name="tmtSizeLi" value="middlesize">
+                                  <label class="inputText" for="tmtSizeLi1" text="">중등급</label>
+                                  <span><input type="text" name="tmtSizeCntLi"
+                                               placeholder="예) 3" numOnly></span>
+                                  <input type="checkbox" id="tmtSizeLi2" name="tmtSizeLi" value="smallsize">
+                                  <label class="inputText" for="tmtSizeLi2" text="">소등급</label>
+                                  <span><input type="text" name="tmtSizeCntLi"
+                                               placeholder="예) 3" numOnly></span>
+<!--                                </div>-->
                                 <input type="hidden" id="array" name="array"/>
-                            </div>-->
+                            </div>
                         </div>
                         <!--End first-second-->
 

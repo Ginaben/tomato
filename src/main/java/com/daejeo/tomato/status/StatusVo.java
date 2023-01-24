@@ -3,6 +3,8 @@ package com.daejeo.tomato.status;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.Map;
+
 @Getter
 @Setter
 public class StatusVo {
@@ -12,6 +14,7 @@ public class StatusVo {
     String tmtPpCd;
     String tmtPpEct;
     String tmtSizeJson;
+    Map<String,Object> tmtSizeMap;
     int orderIdx;
     int receiveIdx;
     String shipMemo;

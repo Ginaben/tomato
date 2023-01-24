@@ -3,6 +3,8 @@ package com.daejeo.tomato.order;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.List;
+
 @Getter
 @Setter
 public class OrderReqVo {
@@ -10,6 +12,8 @@ public class OrderReqVo {
     int tmtOrdIdx;
     String tmtPpCd;
     String tmtPpEct;
+    List<String> tmtSizeLi;
+    List<Long> tmtSizeCntLi;
     String tmtSizeJson;
     int orderIdx;
     int receiveIdx;
