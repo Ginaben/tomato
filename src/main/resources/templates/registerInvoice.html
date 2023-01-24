@@ -33,7 +33,10 @@
                         <span>운송장번호 미등록 목록</span>
                     </div>
                     <div class="unregisterInvoice-top-right">
-                        <button class="btn">송장엑셀등록</button>
+                        <form th:action="@{/invoice/excel/read}" method="POST" enctype="multipart/form-data">
+                            <input type="file" th:name="file">
+                            <input th:type="submit" value="송장엑셀등록" />
+                        </form>
                     </div>
                 </div>
 

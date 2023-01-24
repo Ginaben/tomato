@@ -3,16 +3,20 @@ package com.daejeo.tomato.invoice;
 import com.daejeo.tomato.component.ExcelUtils;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.ss.usermodel.WorkbookFactory;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.File;
+import java.io.InputStream;
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -72,6 +76,41 @@ public class InvoiceController {
 
             ExcelUtils.downloadFile(request, response, file, fileName);
         }
+    }
+
+    @PostMapping("/excel/read")
+    public String readExcel(@RequestParam("file") MultipartFile file, Model model) throws Exception{
+        List<Map<String,Object>> dataList = new ArrayList<>();
+
+        try (InputStream is = file.getInputStream();) {
+
+            Workbook workbook = WorkbookFactory.create(is);
+//            Workbook workbook = new XSSFWorkbook(file.getInputStream());
+
+            Sheet worksheet = workbook.getSheetAt(0);
+
+            String atchFileId = null;
+
+            for (int i = 1; i < worksheet.getPhysicalNumberOfRows(); i++) { // 1번째 행부터 끝까지
+                Row row = worksheet.getRow(i);
+
+                Map<String,Object> data = new HashMap<>();
+                for(int j = 0 ; j < row.getPhysicalNumberOfCells();j++){
+                    data.put(j+"",row.getCell(j));
+                }
+
+                dataList.add(data);
+
+                System.out.println(data);
+            }
+
+            model.addAttribute("list", dataList);
+
+        } catch (Exception e) {
+          e.printStackTrace();
+        }
+
+        return "/order";
     }
 
 }
