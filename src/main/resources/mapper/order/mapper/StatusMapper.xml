@@ -9,6 +9,7 @@
         ,   toi.*
         ,   tri.*
         ,   tcc.code_nm
+        ,   FN_CODE_NM(JSON_EXTRACT(ttoi.tmt_size_json, '$[0].size'))
         FROM tb_tomato_order_info ttoi
         LEFT JOIN tb_orderer_info toi
         ON ttoi.orderer_idx = toi.orderer_idx

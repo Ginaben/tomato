@@ -33,7 +33,7 @@ public class StatusVo {
     String ordererMobile;
     String ordererAdr;
     String ordererDetailAdr;
-    String ordererZipNum;
+    String ordererZipcode;
 
     //receiver info
     int receiverIdx;
@@ -41,7 +41,7 @@ public class StatusVo {
     String receiverMobile;
     String receiverAdr;
     String receiverDetailAdr;
-    String receiverZipNum;
+    String receiverZipcode;
 
     //common_code
     String codeNm;

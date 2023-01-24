@@ -32,7 +32,7 @@ public class OrderReqVo {
     String ordererMobile;
     String ordererAdr;
     String ordererDetailAdr;
-    String ordererZipNum;
+    String ordererZipcode;
 
     //receiver info
     int receiverIdx;
@@ -40,6 +40,6 @@ public class OrderReqVo {
     String receiverMobile;
     String receiverAdr;
     String receiverDetailAdr;
-    String receiverZipNum;
+    String receiverZipcode;
 
 }

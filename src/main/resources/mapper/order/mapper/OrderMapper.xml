@@ -60,7 +60,7 @@
         ,   #{ordererMobile}
         ,   #{ordererAdr}
         ,   #{ordererDetailAdr}
-        ,   #{ordererZipNum}
+        ,   #{ordererZipcode}
         ,   #{registDt}
         ,   #{updateDt}
         )
@@ -82,7 +82,7 @@
         ,   #{receiverMobile}
         ,   #{receiverAdr}
         ,   #{receiverDetailAdr}
-        ,   #{receiverZipNum}
+        ,   #{receiverZipcode}
         ,   #{registDt}
         ,   #{updateDt}
         )
