@@ -52,7 +52,7 @@
         ,   orderer_mobile
         ,   orderer_adr
         ,   orderer_detail_adr
-        ,   orderer_zip_num
+        ,   orderer_zipcode
         ,   regist_dt
         ,   update_dt
         ) VALUES (
@@ -74,7 +74,7 @@
         ,   receiver_mobile
         ,   receiver_adr
         ,   receiver_detail_adr
-        ,   receiver_zip_num
+        ,   receiver_zipcode
         ,   regist_dt
         ,   update_dt
         ) VALUES (
