@@ -33,6 +33,12 @@
                             <span class="bold span01">토마토 품질</span>
                             <span class="ast">토마토 품질 선택은 하나만 가능. 다른 품질은 따로 작성해주세요.</span>
                             <div>
+                                <input type="radio" name="tmtPpCd" id="tmtPremium">
+                                <label class="inputText" for="tmtPremium">프리미엄</label>
+                                <input type="radio" name="tmtPpCd" id="tmtSuperior">
+                                <label class="inputText" for="tmtSuperior">특상</label>
+                                <input type="radio" name="tmtPpCd" id="tmtRandom">
+                                <label class="inputText" for="tmtRandom">랜덤</label>
 <!--                                <div th:each="tomatoQuality: ${tomatoQuality}" style="display: inline-block">
                                     <input type="radio" name="tomatoQuality}" th:value="${tomatoQuality.name()}">
                                     <label class="inputText" th:for="${#ids.prev('tomatoQuality')}" th:text="${tomatoQuality.tomatoQualityName}"></label>
