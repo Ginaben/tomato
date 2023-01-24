@@ -32,6 +32,23 @@ $(document).ready(function(e){
        // console.log(sizeArray);
    });
 
+   $("input[name=tmtSizeLi]").click(function(){
+
+       $("input[name=tmtSizeLi]").each(function(){
+           var checked = $(this).is(":checked");
+
+           var str = $(this).attr('id');
+           str = str.substring(str.length -1, str.length);
+
+           if(checked){
+               $("#tmtSizeCnt" + str).attr("disabled",false);
+           } else {
+               $("#tmtSizeCnt" + str).attr("disabled",true);
+           }
+       })
+
+   });
+
 
 });
 /* End onload*/
