@@ -33,16 +33,16 @@
                             <span class="bold span01">토마토 품질</span>
                             <span class="ast">토마토 품질 선택은 하나만 가능. 다른 품질은 따로 작성해주세요.</span>
                             <div>
-                                <input type="radio" name="tmtPpCd" id="tmtPremium">
+                                <input type="radio" name="tmtPpCd" id="tmtPremium" value="10001">
                                 <label class="inputText" for="tmtPremium">프리미엄</label>
-                                <input type="radio" name="tmtPpCd" id="tmtSuperior">
+                                <input type="radio" name="tmtPpCd" id="tmtSuperior" value="10002">
                                 <label class="inputText" for="tmtSuperior">특상</label>
-                                <input type="radio" name="tmtPpCd" id="tmtRandom">
+                                <input type="radio" name="tmtPpCd" id="tmtRandom" value="10003">
                                 <label class="inputText" for="tmtRandom">랜덤</label>
-<!--                                <div th:each="tomatoQuality: ${tomatoQuality}" style="display: inline-block">
-                                    <input type="radio" name="tomatoQuality}" th:value="${tomatoQuality.name()}">
-                                    <label class="inputText" th:for="${#ids.prev('tomatoQuality')}" th:text="${tomatoQuality.tomatoQualityName}"></label>
-                                </div>-->
+                                <input type="radio" name="tmtPpCd" id="tmtUgly" value="10004">
+                                <label class="inputText" for="tmtUgly">못난이</label>
+                                <input type="radio" name="tmtPpCd" id="tmtJuice" value="10005">
+                                <label class="inputText" for="tmtJuice">주스</label>
                             </div>
                         </div>
                         <!--End first-first-->
@@ -51,20 +51,22 @@
                             <span class="ast bold">*</span>
                             <span class="bold span01">토마토 크기</span>
                               <div>
-<!--                                <div th:each="tomatoSize: ${tomatoSize}" style="display: inline-block">-->
-                                    <input type="checkbox" id="tmtSizeLi" name="tmtSizeLi" value="bigsize">
-                                    <label class="inputText" for="tmtSizeLi" text="">특등급</label>
-                                  <span><input type="text" name="tmtSizeCntLi"
+                                <input type="checkbox" id="tmtSizeLi" name="tmtSizeLi" value="large">
+                                <label class="inputText" for="tmtSizeLi" text="">2L~L</label>
+                                <span><input type="text" name="tmtSizeCntLi"
                                                placeholder="예) 3" numOnly></span>
-                                  <input type="checkbox" id="tmtSizeLi1" name="tmtSizeLi" value="middlesize">
-                                  <label class="inputText" for="tmtSizeLi1" text="">중등급</label>
-                                  <span><input type="text" name="tmtSizeCntLi"
+                                <input type="checkbox" id="tmtSizeLi1" name="tmtSizeLi" value="middle">
+                                <label class="inputText" for="tmtSizeLi1" text="">M</label>
+                                <span><input type="text" name="tmtSizeCntLi"
                                                placeholder="예) 3" numOnly></span>
-                                  <input type="checkbox" id="tmtSizeLi2" name="tmtSizeLi" value="smallsize">
-                                  <label class="inputText" for="tmtSizeLi2" text="">소등급</label>
-                                  <span><input type="text" name="tmtSizeCntLi"
+                                <input type="checkbox" id="tmtSizeLi2" name="tmtSizeLi" value="small">
+                                <label class="inputText" for="tmtSizeLi2" text="">S</label>
+                                <span><input type="text" name="tmtSizeCntLi"
                                                placeholder="예) 3" numOnly></span>
-<!--                                </div>-->
+                                <input type="checkbox" id="tmtSizeLi3" name="tmtSizeLi" value="royal">
+                                <label class="inputText" for="tmtSizeLi2" text="">2S~3S</label>
+                                <span><input type="text" name="tmtSizeCntLi"
+                                               placeholder="예) 3" numOnly></span>
                                 <input type="hidden" id="array" name="array"/>
                             </div>
                         </div>
@@ -72,7 +74,7 @@
 
                         <div class="first-third">
                             <span class="ast bold">*</span>
-                            <span class="bold span01">수량</span>
+                            <span class="bold span01">총 수량</span>
 <!--                            <span><input type="text" name="orderQuantity}" id="orderQuantity"
                                          placeholder="예) 3" numOnly></span> -->
                             <span>개</span>
