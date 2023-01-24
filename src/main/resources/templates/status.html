@@ -56,7 +56,7 @@
                         <td>[[${status.tmtOrdIdx}]]</td>
                         <td>[[${status.tmtOrdIdx}]]</td>
                         <td>[[${status.codeNm}]]</td>
-                        <td>[[${status.tmtSizeMap.size}]]</td>
+                        <td><span th:each="tmtSize: ${status.tmtSizeMap}"><p>[[${tmtSize.size +":"+tmtSize.cnt}]]</p></span></td>
                         <td>[[${status.ordererNm}]]</td>
                         <td>[[${status.ordererNm}]]</td>
                         <td>[[${status.ordererNm}]]</td>

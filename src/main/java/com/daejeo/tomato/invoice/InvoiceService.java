@@ -7,5 +7,5 @@ import org.springframework.stereotype.Service;
 @AllArgsConstructor
 public class InvoiceService {
 
-    private final InvoiceMapper invoiceMapper;
+//    private final InvoiceMapper invoiceMapper;
 }

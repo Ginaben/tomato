@@ -22,7 +22,7 @@ public class StatusServiceImpl implements StatusService {
         List<StatusVo> rst = statusMapper.getStatusList();
         for(StatusVo stv : rst){
             if(stv.getTmtSizeJson() != null && !stv.getTmtSizeJson().equals(""))
-            stv.setTmtSizeMap(CommonUtils.jsonStringToMap(stv.getTmtSizeJson()));
+            stv.setTmtSizeMap(CommonUtils.jsonStringToList(stv.getTmtSizeJson()));
         }
         return rst;
     }
