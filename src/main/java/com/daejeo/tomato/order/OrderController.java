@@ -5,6 +5,8 @@ import com.daejeo.tomato.order.impl.OrderServiceImpl;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.Banner;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -38,12 +40,17 @@ public class OrderController {
         return "redirect:/order";
     }*/
 
+
+/*    @PostMapping("/orderRegister/add")
+    @ResponseBody
+    public ResponseEntity<String> orderInsert(@RequestParam OrderReqVo orderReqVo) throws Exception{
+        orderService.orderInsert(orderReqVo);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }*/
+
     @PostMapping("/orderRegister/add")
     public String orderInsert(OrderReqVo orderReqVo) throws Exception{
         orderService.orderInsert(orderReqVo);
-//        orderService.receiverInsert(orderReqVo);
-//        orderService.orderInfoInsert(orderReqVo);
-
         return "redirect:/order/orderRegister";
     }
 

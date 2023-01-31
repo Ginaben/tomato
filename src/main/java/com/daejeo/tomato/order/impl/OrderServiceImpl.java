@@ -27,6 +27,7 @@ public class OrderServiceImpl implements OrderService {
     public int orderInsert(OrderReqVo orderReqVo) throws Exception{
 
         Integer ordererIdx = orderMapper.ordererDupCheck(orderReqVo);
+        log.info("30: ", ordererIdx);
         if(ordererIdx == null){
             orderMapper.ordererInsert(orderReqVo);
         } else {

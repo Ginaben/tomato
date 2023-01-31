@@ -40,7 +40,7 @@
         </if>
             ,   #{salesPrice}
             ,   #{note}
-            ,   #{registDt}
+            ,   CURRENT_TIMESTAMP
             ,   #{updateDt}
         )
     </insert>
@@ -94,6 +94,15 @@
             orderer_idx
         FROM tb_orderer_info
         WHERE 1=1
+        <if test=" ordererNm == null or ordererNm == '' ">
+            and orderer_nm = '신재희'
+        </if>
+        <if test =' ordererNm != null and ordererNm != "" '>
+            and orderer_nm = #{ordererNm}
+        </if>
+        <if test=" ordererMobile == null or ordererMobile == '' ">
+            and orderer_mobile = '010-5392-4329'
+        </if>
         <if test =' ordererMobile != null and ordererMobile != "" '>
             and orderer_mobile = #{ordererMobile}
         </if>
@@ -105,7 +114,10 @@
             receiver_idx
         FROM tb_receiver_info
         WHERE 1=1
-        <if test =' receiverMobile != null and receiverMobile != "" '>
+        <if test =' receiverNm != null and receiverNm != "" '>
+            and receiver_nm = #{receiverNm}
+        </if>
+          <if test =' receiverMobile != null and receiverMobile != "" '>
             and receiver_mobile = #{receiverMobile}
         </if>
     </select>

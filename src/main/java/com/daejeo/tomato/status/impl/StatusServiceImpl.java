@@ -24,7 +24,7 @@ public class StatusServiceImpl implements StatusService {
             if(stv.getTmtSizeJson() != null && !stv.getTmtSizeJson().equals(""))
             stv.setTmtSizeMap(CommonUtils.jsonStringToList(stv.getTmtSizeJson()));
         }
-        
+
 
         return rst;
     }
