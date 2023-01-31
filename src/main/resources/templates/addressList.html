@@ -1,10 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+<th:block th:replace="~{basicTemplate :: setContent(~{this::content})}" xmlns:th="http://www.w3.org/1999/xhtml">
+    <th:block th:fragment="content">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+                integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+                crossorigin="anonymous"></script>
+        <link href="https://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.min.css" rel="stylesheet">
+        <script src="https://code.jquery.com/ui/1.10.2/jquery-ui.min.js"></script>
 
-</body>
-</html>
+        <div class="wrapper">
+
+            <!--Title-->
+            <div class="title bold">주소록</div>
+
+            <!--SearchBox-->
+            <div class="searchBox temp">
+                검색검색
+                <div>
+                    <button class="btn">검색</button>
+                    <button class="cancelBtn">초기화</button>
+                </div>
+
+            </div>
+            <!--End search box-->
+
+
+
+        </div>
+    </th:block>
+</th:block>
