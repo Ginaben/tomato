@@ -1,4 +1,4 @@
-package com.daejeo.tomato.address;
+package com.daejeo.tomato.address.mapper;
 
 import com.daejeo.tomato.address.vo.OrdererVo;
 import com.daejeo.tomato.address.vo.ReceiverVo;

@@ -1,7 +1,7 @@
 package com.daejeo.tomato.status.impl;
 
 import com.daejeo.tomato.component.CommonUtils;
-import com.daejeo.tomato.status.StatusMapper;
+import com.daejeo.tomato.status.mapper.StatusMapper;
 import com.daejeo.tomato.status.StatusService;
 import com.daejeo.tomato.status.StatusVo;
 import lombok.AllArgsConstructor;

@@ -1,5 +1,6 @@
 package com.daejeo.tomato.address;
 
+import com.daejeo.tomato.address.mapper.AddressMapper;
 import com.daejeo.tomato.address.vo.OrdererVo;
 import com.daejeo.tomato.address.vo.ReceiverVo;
 import lombok.AllArgsConstructor;

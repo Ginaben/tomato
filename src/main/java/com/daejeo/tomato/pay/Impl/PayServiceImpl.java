@@ -1,6 +1,6 @@
 package com.daejeo.tomato.pay.Impl;
 
-import com.daejeo.tomato.pay.PayMapper;
+import com.daejeo.tomato.pay.mapper.PayMapper;
 import com.daejeo.tomato.pay.PayService;
 import com.daejeo.tomato.pay.UnpaidVo;
 import lombok.AllArgsConstructor;

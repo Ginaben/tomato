@@ -1,4 +1,4 @@
-package com.daejeo.tomato.invoice;
+package com.daejeo.tomato.invoice.mapper;
 
 import org.apache.ibatis.annotations.Mapper;
 

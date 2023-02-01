@@ -1,7 +1,7 @@
 package com.daejeo.tomato.order.impl;
 
 import com.daejeo.tomato.component.CommonUtils;
-import com.daejeo.tomato.order.OrderMapper;
+import com.daejeo.tomato.order.mapper.OrderMapper;
 import com.daejeo.tomato.order.OrderReqVo;
 import com.daejeo.tomato.order.OrderService;
 import lombok.AllArgsConstructor;
