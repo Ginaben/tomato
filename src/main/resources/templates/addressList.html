@@ -14,7 +14,14 @@
 
             <!--SearchBox-->
             <div class="searchBox temp">
-                검색검색
+                <div>
+                    <p>검색검색</p>
+                    <label for="orderer">주문한 사람</label>
+                    <input type="radio" id="orderer" value="orderer">
+                    <label for="receiver">받는 사람</label>
+                    <input type="radio" id="receiver" value="receiver">
+                </div>
+
                 <div>
                     <button class="btn">검색</button>
                     <button class="cancelBtn">초기화</button>
@@ -22,6 +29,46 @@
 
             </div>
             <!--End search box-->
+
+            <!-- orderer list-->
+            <div class="ordererTableBox temp">
+                <div>
+                    주문한 사람 목록
+                </div>
+                <table id="ordererTable">
+                    <tr>
+                        <th>이름</th>
+                        <th>휴대폰번호</th>
+                        <th>비고</th>
+                    </tr>
+                    <tr th:each="orderer: ${orderer}">
+                        <input type="hidden" value="${orderer.ordererIdx}"/>
+                        <td>[[${orderer.ordererNm}]]</td>
+                        <td>[[${orderer.ordererMobile}]]</td>
+                        <td>[[${orderer.ordererEct}]]</td>
+                    </tr>
+                </table>
+            </div>
+            <!-- orderer list end-->
+
+            <!-- receiver list-->
+            <div class="receiverTableBox temp">
+                <div>받는 사람 목록 </div>
+                <table id="receiverTable">
+                    <tr>
+                        <th>이름</th>
+                        <th>휴대폰번호</th>
+                        <th>주소</th>
+                    </tr>
+                    <tr th:each="receiver: ${receiver}">
+                        <input type="hidden" value="${receiver.receiverIdx}"/>
+                        <td>[[${receiver.receiverNm}]]</td>
+                        <td>[[${receiver.receiverMobile}]]</td>
+                        <td>[[${receiver.receiverAdr}]] &nbsp; [[${receiver.receiverDetailAdr}]]</td>
+                    </tr>
+                </table>
+            </div>
+            <!-- orderer list end-->
 
 
 

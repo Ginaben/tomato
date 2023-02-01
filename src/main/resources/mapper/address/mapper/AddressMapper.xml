@@ -9,4 +9,10 @@
         FROM tb_orderer_info
     </select>
 
+    <select id="getReceiverList" resultType="com.daejeo.tomato.address.vo.ReceiverVo">
+        SELECT
+            *
+        FROM tb_receiver_info
+    </select>
+
 </mapper>
