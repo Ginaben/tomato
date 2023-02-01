@@ -31,10 +31,9 @@
                     <tr>
                         <th>주문번호</th>
                         <th>주문날짜</th>
-                        <th>주문코드</th>
                         <th>토마토품질</th>
                         <th>토마토사이즈</th>
-                        <th>토마토박스수량</th>
+                        <th>주문수량</th>
                         <th>전체주문수량</th>
                         <th>주문자</th>
                         <th>주문자연락처</th>
@@ -46,28 +45,27 @@
                         <th>현금영수증</th>
                         <th>입금일</th>
                         <th>판매금액</th>
-                        <th>배송일</th>
                         <th>배송비</th>
                         <th>운송장번호</th>
-                        <th>주문자특이사항</th>
                     </tr>
                     <tr th:each="status: ${statusList}">
                         <td>[[${status.tmtOrdIdx}]]</td>
                         <td>[[${status.tmtOrdIdx}]]</td>
-                        <td>[[${status.tmtOrdIdx}]]</td>
                         <td>[[${status.codeNm}]]</td>
-                        <td><span th:each="tmtSize: ${status.tmtSizeMap}"><p>[[${tmtSize.size +":"+tmtSize.cnt}]]</p></span></td>
+                        <td><span th:each="tmtSize: ${status.tmtSizeMap}"><p>[[${tmtSize.size}]]</p></span></td>
+                        <td><span th:each="tmtSize: ${status.tmtSizeMap}"><p>[[${tmtSize.cnt}]]</p></span></td>
                         <td>[[${status.ordererNm}]]</td>
                         <td>[[${status.ordererNm}]]</td>
                         <td>[[${status.ordererNm}]]</td>
                         <td>[[${status.ordererMobile}]]</td>
                         <td>[[${status.receiverNm}]]</td>
                         <td>[[${status.receiverMobile}]]</td>
-                        <td>[[${status.receiverAdr}]] [[${status.receiverDetailAdr}]]</td>
+                        <td>[[${status.receiverAdr}]] &nbsp; [[${status.receiverDetailAdr}]]</td>
                         <td>[[${status.shipMemo}]]</td>
                         <td>[[${status.note}]]</td>
                         <td>[[${status.cashRecptNum}]]</td>
                         <td>[[${status.depositDt}]]</td>
+                        <td>[[${status.salesPrice}]]</td>
                         <td>[[${status.salesPrice}]]</td>
 
                     </tr>
