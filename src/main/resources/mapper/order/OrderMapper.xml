@@ -31,7 +31,12 @@
             ,   #{receiverIdx}
             ,   #{shipMemo}
             ,   #{cashRecptNum}
-            ,   #{depositYn}
+        <if test=" depositDt == null or depositDt == '' ">
+            ,   'N'
+        </if>
+        <if test=" depositDt != null and depositDt != '' ">
+            ,   'Y'
+        </if>
         <if test=" depositDt == null or depositDt == '' ">
             ,   null
         </if>
