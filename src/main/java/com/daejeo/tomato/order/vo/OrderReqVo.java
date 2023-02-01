@@ -1,4 +1,4 @@
-package com.daejeo.tomato.order;
+package com.daejeo.tomato.order.vo;
 
 import lombok.Getter;
 import lombok.Setter;

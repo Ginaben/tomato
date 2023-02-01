@@ -8,7 +8,7 @@
     </select>
 
     <!-- 주문 정보 입력 -->
-    <insert id="orderInfoInsert" parameterType="com.daejeo.tomato.order.OrderReqVo">
+    <insert id="orderInfoInsert" parameterType="com.daejeo.tomato.order.vo.OrderReqVo">
         INSERT INTO tb_tomato_order_info (
                 tmt_pp_cd
             ,   tmt_pp_etc
@@ -46,7 +46,7 @@
     </insert>
 
     <!-- 주문자 정보 입력 -->
-    <insert id="ordererInsert" parameterType="com.daejeo.tomato.order.OrderReqVo"  useGeneratedKeys="true" keyProperty="ordererIdx">
+    <insert id="ordererInsert" parameterType="com.daejeo.tomato.order.vo.OrderReqVo" useGeneratedKeys="true" keyProperty="ordererIdx">
     INSERT INTO tb_orderer_info (
             orderer_nm
         ,   orderer_mobile
@@ -68,7 +68,7 @@
     </insert>
 
     <!-- 수령인 정보 입력 -->
-    <insert id="receiverInsert" parameterType="com.daejeo.tomato.order.OrderReqVo" useGeneratedKeys="true" keyProperty="receiverIdx">
+    <insert id="receiverInsert" parameterType="com.daejeo.tomato.order.vo.OrderReqVo" useGeneratedKeys="true" keyProperty="receiverIdx">
         INSERT INTO tb_receiver_info (
             receiver_nm
         ,   receiver_mobile
@@ -89,7 +89,7 @@
     </insert>
 
     <!--주문자 중복체크-->
-    <select id="ordererDupCheck" parameterType="com.daejeo.tomato.order.OrderReqVo" resultType="Integer">
+    <select id="ordererDupCheck" parameterType="com.daejeo.tomato.order.vo.OrderReqVo" resultType="Integer">
         SELECT
             orderer_idx
         FROM tb_orderer_info
@@ -109,7 +109,7 @@
     </select>
 
     <!--받는사람 중복체크-->
-    <select id="receiverDupCheck" parameterType="com.daejeo.tomato.order.OrderReqVo" resultType="Integer">
+    <select id="receiverDupCheck" parameterType="com.daejeo.tomato.order.vo.OrderReqVo" resultType="Integer">
         SELECT
             receiver_idx
         FROM tb_receiver_info

@@ -1,6 +1,6 @@
 package com.daejeo.tomato.order.mapper;
 
-import com.daejeo.tomato.order.OrderReqVo;
+import com.daejeo.tomato.order.vo.OrderReqVo;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;

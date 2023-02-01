@@ -1,4 +1,4 @@
-package com.daejeo.tomato.status;
+package com.daejeo.tomato.status.vo;
 
 import lombok.Getter;
 import lombok.Setter;

@@ -1,11 +1,11 @@
 package com.daejeo.tomato.pay;
 
 import com.daejeo.tomato.pay.Impl.PayServiceImpl;
+import com.daejeo.tomato.pay.vo.UnpaidVo;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpServletRequest;

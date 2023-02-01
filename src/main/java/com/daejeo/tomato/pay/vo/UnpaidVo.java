@@ -1,4 +1,4 @@
-package com.daejeo.tomato.pay;
+package com.daejeo.tomato.pay.vo;
 
 import lombok.Getter;
 import lombok.Setter;

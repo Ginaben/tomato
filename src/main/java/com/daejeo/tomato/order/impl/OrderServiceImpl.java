@@ -2,7 +2,7 @@ package com.daejeo.tomato.order.impl;
 
 import com.daejeo.tomato.component.CommonUtils;
 import com.daejeo.tomato.order.mapper.OrderMapper;
-import com.daejeo.tomato.order.OrderReqVo;
+import com.daejeo.tomato.order.vo.OrderReqVo;
 import com.daejeo.tomato.order.OrderService;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
