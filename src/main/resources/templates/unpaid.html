@@ -33,6 +33,7 @@
                         <th>주문번호</th>
                         <th>토마토품질</th>
                         <th>토마토사이즈</th>
+                        <th>주문수량</th>
                         <th>주문자</th>
                         <th>주문자연락처</th>
                         <th>받는사람</th>
@@ -46,13 +47,15 @@
                         <th>배송일</th>
                         <th>배송비</th>
                         <th>운송장번호</th>
-                        <th>주문자특이사항</th>
+<!--                        <th>주문자특이사항</th>-->
                     </tr>
 
                     <tr th:each="status, idx: ${unPaidList}">
                         <td>[[${status.registDt}]]</td>
-                        <td>[[${idx.index + 1}]]</td>
+                        <td>[[${status.tmtOrdIdx}]]</td>
+<!--                        <td>[[${idx.index + 1}]]</td>-->
                         <td>[[${status.tmtPpNm}]]</td>
+                        <td>공백</td>
                         <td>공백</td>
                         <td>[[${status.ordererNm}]]</td>
                         <td>[[${status.ordererMobile}]]</td>
@@ -67,7 +70,7 @@
                         <td>[[${status.shipDt}]]</td>
                         <td>[[${status.shippingFee}]]</td>
                         <td>[[${status.waybillNum}]]</td>
-                        <td>[[${status.ordererEtc}]]</td>
+<!--                        <td>[[${status.ordererEtc}]]</td>-->
                     </tr>
                 </table>
             </div>
