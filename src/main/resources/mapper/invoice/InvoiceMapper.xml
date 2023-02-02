@@ -3,26 +3,21 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.daejeo.tomato.invoice.mapper.InvoiceMapper">
 
-    <select id="getExportInvoiceList" resultType="com.daejeo.tomato.invoice.vo.InvoiceAllVo">
-        SELECT
-            ttoi.*
-             ,   toi.*
-             ,   tri.*
-             ,   tcc.code_nm
-             ,   FN_CODE_NM(JSON_EXTRACT(ttoi.tmt_size_json, '$[0].size'))
-        FROM tb_tomato_order_info ttoi
-                 LEFT JOIN tb_orderer_info toi
-                           ON ttoi.orderer_idx = toi.orderer_idx
-                 LEFT JOIN tb_receiver_info tri
-                           ON tri.receiver_idx = ttoi.receiver_idx
-                 LEFT JOIN tb_common_code tcc
-                           ON ttoi.tmt_pp_cd = tcc.code
-                 RIGHT OUTER JOIN tb_invoice_info tii
-                           ON ttoi.tmt_ord_idx = tii.tmt_ord_idx
-                        WHERE
-
-        ORDER BY ttoi.tmt_ord_idx DESC
-    </select>
+    <insert id="invoiceListInsert" parameterType="com.daejeo.tomato.invoice.vo.InvoiceReqVo">
+        INSERT INTO tb_invoice_info (
+            tmt_ord_idx
+        ,   tmt_box_cnt
+        ,   waybill_num
+        ,   ship_dt
+        ,   regist_dt
+        ) VALUES (
+            #{tmtOrdIdx}
+        ,   #{tmtBoxCnt}
+        ,   #{waybillNum}
+        ,   #{shipDt}
+        ,   CURRENT_TIMESTAMP
+        )
+    </insert>
 
 
 

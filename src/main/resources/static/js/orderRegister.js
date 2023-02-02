@@ -80,6 +80,17 @@ $(document).ready(function(e){
         }
     });
 
+    //총 수량 계산
+    $("input[name=tmtSizeCntLi]").keyup(function(){
+        let sum = 0;
+        $("input[name=tmtSizeCntLi]").each(function(){
+           sum += Number($(this).val());
+        });
+        $("#tmtTotalCnt").val(sum);
+        // $("#tmtTotalCnt").text(sum);
+    });
+
+
     /**
      * 정규식
      */

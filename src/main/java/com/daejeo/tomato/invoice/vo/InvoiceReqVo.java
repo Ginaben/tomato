@@ -5,11 +5,11 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class InvoiceVo {
+public class InvoiceReqVo {
 
     int invoiceIdx;
-    int intOrdIdx;
-
+    int tmtOrdIdx;
+    int tmtBoxCnt;
     String waybillNum;
     String shipDt;
     String registDt;
