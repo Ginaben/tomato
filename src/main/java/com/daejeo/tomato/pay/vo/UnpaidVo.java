@@ -10,6 +10,7 @@ public class UnpaidVo {
     String registDt;
     int tmtOrdIdx;
     String tmtPpNm;
+    int tmtTotalCnt;
     String ordererNm;
     String ordererMobile;
     String receiverNm;

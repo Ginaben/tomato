@@ -1,20 +1,22 @@
-package com.daejeo.tomato.order.vo;
+package com.daejeo.tomato.invoice.vo;
 
 import lombok.Getter;
 import lombok.Setter;
 
 import java.util.List;
+import java.util.Map;
 
 @Getter
 @Setter
-public class OrderReqVo {
-    //orderInfo
+public class InvoiceAllVo {
+
+    //order
     int tmtOrdIdx;
     String tmtPpCd;
     String tmtPpEct;
-    List<String> tmtSizeLi;
-    List<Long> tmtSizeCntLi;
     String tmtSizeJson;
+    int tmtTotalCnt;
+    List<Map<String,Object>> tmtSizeMap;
     int orderIdx;
     int receiveIdx;
     String shipMemo;
@@ -23,9 +25,6 @@ public class OrderReqVo {
     String depositDt;
     Long salesPrice;
     String note;
-    String registDt;
-    String updateDt;
-    int tmtTotalCnt;
 
     //orderer info
     int ordererIdx;
@@ -43,4 +42,8 @@ public class OrderReqVo {
     String receiverDetailAdr;
     String receiverZipcode;
 
+    //common_code
+    String codeNm;
+    String registDt;
+    String updateDt;
 }

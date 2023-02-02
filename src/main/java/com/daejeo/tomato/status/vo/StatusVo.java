@@ -15,7 +15,7 @@ public class StatusVo {
     String tmtPpCd;
     String tmtPpEct;
     String tmtSizeJson;
-    String tmtTotalAmt;
+    int tmtTotalCnt;
     List<Map<String,Object>> tmtSizeMap;
     int orderIdx;
     int receiveIdx;
