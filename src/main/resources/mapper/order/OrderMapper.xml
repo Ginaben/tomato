@@ -13,6 +13,7 @@
                 tmt_pp_cd
             ,   tmt_pp_etc
             ,   tmt_size_json
+            ,   tmt_total_amt
             ,   orderer_idx
             ,   receiver_idx
             ,   ship_memo
@@ -27,6 +28,7 @@
                 #{tmtPpCd}
             ,   #{tmtPpEct}
             ,   #{tmtSizeJson}
+            ,   #{tmtTotalAmt}
             ,   #{ordererIdx}
             ,   #{receiverIdx}
             ,   #{shipMemo}

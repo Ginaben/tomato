@@ -25,6 +25,7 @@ public class OrderReqVo {
     String note;
     String registDt;
     String updateDt;
+    String tmtTotalAmt;
 
     //orderer info
     int ordererIdx;
