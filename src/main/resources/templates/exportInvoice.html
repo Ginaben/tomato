@@ -41,6 +41,13 @@
                             <th>배송메세지</th>
                             <th>주문비고</th>
                         </tr>
+                        <tr th:each="one: ${one}">
+                            <td>[[${one.tmtOrdIdx}]]</td>
+                            <td>[[${one.ordererNm}]]</td>
+                            <td>[[${one.ordererMobile}]]</td>
+                            <td>[[${one.tmtBoxCnt}]]</td>
+                            <td>[[${one.tmtTotalCnt}]]</td>
+                        </tr>
 
                     </table>
                 </div>
@@ -72,7 +79,15 @@
                             <th>받는사람주소</th>
                             <th>배송메세지</th>
                             <th>주문비고</th>
+                        </tr> 
+                        <tr th:each="two: ${two}">
+                            <td>[[${two.tmtOrdIdx}]]</td>
+                            <td>[[${two.ordererNm}]]</td>
+                            <td>[[${two.ordererMobile}]]</td>
+                            <td>[[${two.tmtBoxCnt}]]</td>
+                            <td>[[${two.tmtTotalCnt}]]</td>
                         </tr>
+
 
                     </table>
                 </div>

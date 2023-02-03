@@ -19,6 +19,46 @@
         )
     </insert>
 
+    <select id="getOneBoxList" resultType="com.daejeo.tomato.invoice.vo.InvoiceAllVo">
+        SELECT
+                tii.*
+            ,   ttoi.*
+            ,   toi.*
+            ,   tri.*
+            ,   tcc.code_nm
+        FROM tb_invoice_info tii
+        LEFT JOIN tb_tomato_order_info ttoi
+               ON tii.tmt_ord_idx = ttoi.tmt_ord_idx
+        LEFT JOIN tb_orderer_info toi
+               ON ttoi.orderer_idx = toi.orderer_idx
+        LEFT JOIN tb_receiver_info tri
+               ON tri.receiver_idx = ttoi.receiver_idx
+        LEFT JOIN tb_common_code tcc
+               ON ttoi.tmt_pp_cd = tcc.code
+        WHERE 1=1
+          AND tii.tmt_box_cnt = 1
+        ORDER BY tii.invoice_idx
+    </select>
 
+    <select id="getTwoBoxList" resultType="com.daejeo.tomato.invoice.vo.InvoiceAllVo">
+        SELECT
+            tii.*
+             ,   ttoi.*
+             ,   toi.*
+             ,   tri.*
+             ,   tcc.code_nm
+        FROM tb_invoice_info tii
+                 LEFT JOIN tb_tomato_order_info ttoi
+                           ON tii.tmt_ord_idx = ttoi.tmt_ord_idx
+                 LEFT JOIN tb_orderer_info toi
+                           ON ttoi.orderer_idx = toi.orderer_idx
+                 LEFT JOIN tb_receiver_info tri
+                           ON tri.receiver_idx = ttoi.receiver_idx
+                 LEFT JOIN tb_common_code tcc
+                           ON ttoi.tmt_pp_cd = tcc.code
+        WHERE 1=1
+          AND tii.tmt_box_cnt = 2
+        ORDER BY tii.invoice_idx
+    </select>
 
 </mapper>

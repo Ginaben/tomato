@@ -10,6 +10,12 @@ import java.util.Map;
 @Setter
 public class InvoiceAllVo {
 
+    //invoice
+    int invoiceIdx;
+    int tmtBoxCnt;
+    String waybillNum;
+    String shipDt;
+
     //order
     int tmtOrdIdx;
     String tmtPpCd;
@@ -30,9 +36,6 @@ public class InvoiceAllVo {
     int ordererIdx;
     String ordererNm;
     String ordererMobile;
-    String ordererAdr;
-    String ordererDetailAdr;
-    String ordererZipcode;
 
     //receiver info
     int receiverIdx;

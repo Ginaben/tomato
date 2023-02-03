@@ -1,6 +1,8 @@
 package com.daejeo.tomato.invoice;
 
 import com.daejeo.tomato.component.ExcelUtils;
+import com.daejeo.tomato.invoice.vo.InvoiceAllVo;
+import com.daejeo.tomato.status.vo.StatusVo;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.poi.ss.usermodel.Row;
@@ -33,8 +35,11 @@ public class InvoiceController {
 
     @GetMapping("/invoiceExport")
     public String invoiceExport(HttpServletRequest request, HttpServletResponse response, Model model) {
+        List<InvoiceAllVo> getOneBoxList = invoiceService.getOneBoxList();
+        List<InvoiceAllVo> getTwoBoxList = invoiceService.getTwoBoxList();
 
-//        model.addAttribute("",);
+        model.addAttribute("one", getOneBoxList);
+        model.addAttribute("two", getTwoBoxList);
 
         return "/exportInvoice";
     }
@@ -112,6 +117,14 @@ public class InvoiceController {
 
         return "/order";
     }
+
+//    @GetMapping("/invoiceExport")
+//    public String getStatusList(Model model) throws Exception{
+//        List<InvoiceAllVo> getOneBoxList = invoiceService.getOneBoxList();
+//        log.info("121={}", getOneBoxList);
+//        model.addAttribute("one", getOneBoxList);
+//        return "/exportInvoice";
+//    }
 
 }
 
