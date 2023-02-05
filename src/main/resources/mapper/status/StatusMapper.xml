@@ -8,6 +8,7 @@
             ttoi.*
         ,   toi.*
         ,   tri.*
+        ,   tii.*
         ,   tcc.code_nm
         ,   FN_CODE_NM(JSON_EXTRACT(ttoi.tmt_size_json, '$[0].size'))
         FROM tb_invoice_info tii

@@ -20,9 +20,12 @@ public class StatusServiceImpl implements StatusService {
     @Override
     public List<StatusVo> getStatusList() throws Exception {
         List<StatusVo> rst = statusMapper.getStatusList();
+        int tmtBoxCnt = 0;
         for(StatusVo stv : rst){
             if(stv.getTmtSizeJson() != null && !stv.getTmtSizeJson().equals(""))
             stv.setTmtSizeMap(CommonUtils.jsonStringToList(stv.getTmtSizeJson()));
+            tmtBoxCnt += stv.getTmtBoxCnt();
+            stv.setTmtBoxStatus(tmtBoxCnt+"/"+stv.getTmtTotalCnt());
         }
 
 

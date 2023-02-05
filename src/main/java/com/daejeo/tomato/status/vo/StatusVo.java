@@ -47,6 +47,7 @@ public class StatusVo {
     //invoice
     int invoiceIdx;
     int tmtBoxCnt;
+    String tmtBoxStatus;
     String waybillNum;
     String shipDt;
 

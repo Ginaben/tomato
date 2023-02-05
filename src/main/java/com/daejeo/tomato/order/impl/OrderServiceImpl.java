@@ -89,6 +89,12 @@ public class OrderServiceImpl implements OrderService {
             invoiceMapper.invoiceListInsert(invoiceReqVo);
         }
 
+        for(Map<String ,Object> tmtSize : sizeLi){
+
+
+        }
+        // [{ " size : 201 " , cnt : 3} , {"size: 211, cnt : 2}]
+        // 201 , 2, 201.2011
         return 1;
     }
 

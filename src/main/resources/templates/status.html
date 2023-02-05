@@ -48,13 +48,13 @@
                         <th>배송비</th>
                         <th>운송장번호</th>
                     </tr>
-                    <tr th:each="status: ${statusList}">
-                        <td>[[${status.tmtOrdIdx}]]</td>
+                    <tr th:each="status: ${statusList}" th:with="tmtcnt=0">
+                        <td class="orderNumber">[[${status.tmtOrdIdx}]]</td>
                         <td>[[${status.tmtOrdIdx}]]</td>
                         <td>[[${status.codeNm}]]</td>
                         <td><span th:each="tmtSize: ${status.tmtSizeMap}"><p>[[${tmtSize.size}]]</p></span></td>
                         <td><span th:each="tmtSize: ${status.tmtSizeMap}"><p>[[${tmtSize.cnt}]]</p></span></td>
-                        <td>[[${status.tmtTotalCnt}]]</td>
+                        <td><span>[[${status.tmtBoxStatus}]]</span></td>
                         <td>[[${status.ordererNm}]]</td>
                         <td>[[${status.ordererNm}]]</td>
                         <td>[[${status.ordererNm}]]</td>
@@ -80,3 +80,21 @@
         </div>
     </th:block>
 </th:block>
+<script>
+    $(document).ready(function(e){
+        var orderNumChk = 0;
+        var orderTxt = '';
+        $(".orderNumber").each(function () {
+            var rows = $(".orderNumber:contains('" + $(this).text() + "')");
+            if (rows.length > 1) { //동일한 rows값이 1개 이상이면 열을 합침
+                rows.eq(0).attr("rowspan", rows.length);
+                rows.not(":eq(0)").remove();
+            }
+        });
+
+    })
+
+
+
+
+</script>
