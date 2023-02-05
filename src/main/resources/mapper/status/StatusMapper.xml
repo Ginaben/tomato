@@ -10,14 +10,16 @@
         ,   tri.*
         ,   tcc.code_nm
         ,   FN_CODE_NM(JSON_EXTRACT(ttoi.tmt_size_json, '$[0].size'))
-        FROM tb_tomato_order_info ttoi
+        FROM tb_invoice_info tii
+        LEFT JOIN tb_tomato_order_info ttoi
+               ON tii.tmt_ord_idx = ttoi.tmt_ord_idx
         LEFT JOIN tb_orderer_info toi
-        ON ttoi.orderer_idx = toi.orderer_idx
+               ON ttoi.orderer_idx = toi.orderer_idx
         LEFT JOIN tb_receiver_info tri
-        ON tri.receiver_idx = ttoi.receiver_idx
+               ON tri.receiver_idx = ttoi.receiver_idx
         LEFT JOIN tb_common_code tcc
-        ON ttoi.tmt_pp_cd = tcc.code
-        ORDER BY ttoi.tmt_ord_idx DESC
+               ON ttoi.tmt_pp_cd = tcc.code
+        ORDER BY ttoi.tmt_ord_idx
     </select>
 
 </mapper>

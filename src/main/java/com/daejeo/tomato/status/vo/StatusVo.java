@@ -44,6 +44,12 @@ public class StatusVo {
     String receiverDetailAdr;
     String receiverZipcode;
 
+    //invoice
+    int invoiceIdx;
+    int tmtBoxCnt;
+    String waybillNum;
+    String shipDt;
+
     //common_code
     String codeNm;
 }
