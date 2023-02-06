@@ -51,7 +51,8 @@
                     <tr th:each="status: ${statusList}" th:with="tmtcnt=0">
                         <td class="orderNumber">[[${status.tmtOrdIdx}]]</td>
                         <td>[[${status.tmtOrdIdx}]]</td>
-                        <td>[[${status.codeNm}]]</td>
+                        <td>[[${status.tmtQlt}]]</td>
+                        <td>[[${status.tmtSize}]]</td>
                         <td><span th:each="tmtSize: ${status.tmtSizeMap}"><p>[[${tmtSize.size}]]</p></span></td>
                         <td><span th:each="tmtSize: ${status.tmtSizeMap}"><p>[[${tmtSize.cnt}]]</p></span></td>
                         <td><span>[[${status.tmtBoxStatus}]]</span></td>

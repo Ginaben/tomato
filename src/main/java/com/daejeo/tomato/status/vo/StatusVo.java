@@ -12,6 +12,7 @@ public class StatusVo {
 
     //order
     int tmtOrdIdx;
+    String tmtQlt;
     String tmtPpCd;
     String tmtPpEct;
     String tmtSizeJson;
@@ -25,8 +26,7 @@ public class StatusVo {
     String depositDt;
     Long salesPrice;
     String note;
-    String registDt;
-    String updateDt;
+    String tmtSize;
 
     //orderer info
     int ordererIdx;
@@ -50,7 +50,10 @@ public class StatusVo {
     String tmtBoxStatus;
     String waybillNum;
     String shipDt;
+    String shippingFee;
 
     //common_code
     String codeNm;
+    String registDt;
+    String updateDt;
 }
