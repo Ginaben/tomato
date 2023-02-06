@@ -22,4 +22,6 @@ public interface OrderMapper {
     Integer ordererDupCheck(OrderReqVo orderReqVo);
     Integer receiverDupCheck(OrderReqVo orderReqVo);
 
+    String codeToNm(String code);
+
 }

@@ -129,6 +129,10 @@
         </if>
     </select>
 
+    <select id="codeToNm" resultType="String">
+        SELECT FN_CODE_NM(#{code}) FROM DUAL
+    </select>
+
 
 
 </mapper>

@@ -22,7 +22,6 @@ public class StatusController {
     @GetMapping("/statusRegist")
     public String getStatusList(Model model) throws Exception{
         List<StatusVo> statusList =  statusService.getStatusList();
-        log.info("-----------ben ------------ ", statusList);
         model.addAttribute("statusList", statusList);
         return "status";
     }
