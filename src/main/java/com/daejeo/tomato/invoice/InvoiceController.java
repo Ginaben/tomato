@@ -46,10 +46,9 @@ public class InvoiceController {
 
     @GetMapping("/invoiceRegist")
     public String invoiceRegist(HttpServletRequest request, HttpServletResponse response, Model model) {
-
-//        model.addAttribute("",);
-
-        return "/registerInvoice";
+        List<InvoiceAllVo> getUnregistInvoiceList = invoiceService.getUnregistInvoiceList();
+        model.addAttribute("unRegist", getUnregistInvoiceList);
+        return "registerInvoice";
     }
 
     @GetMapping("/excelDownload")
@@ -117,14 +116,6 @@ public class InvoiceController {
 
         return "/order";
     }
-
-//    @GetMapping("/invoiceExport")
-//    public String getStatusList(Model model) throws Exception{
-//        List<InvoiceAllVo> getOneBoxList = invoiceService.getOneBoxList();
-//        log.info("121={}", getOneBoxList);
-//        model.addAttribute("one", getOneBoxList);
-//        return "/exportInvoice";
-//    }
 
 }
 

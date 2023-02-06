@@ -13,4 +13,6 @@ public interface InvoiceMapper {
 
     List<InvoiceAllVo> getOneBoxList();
     List<InvoiceAllVo> getTwoBoxList();
+
+    List<InvoiceAllVo> getUnregistInvoiceList();
 }

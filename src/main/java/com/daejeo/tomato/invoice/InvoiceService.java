@@ -20,4 +20,8 @@ public class InvoiceService {
     public List<InvoiceAllVo> getTwoBoxList() {
         return invoiceMapper.getTwoBoxList();
     }
+
+    public List<InvoiceAllVo> getUnregistInvoiceList() {
+        return invoiceMapper.getUnregistInvoiceList();
+    }
 }

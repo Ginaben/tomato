@@ -2,7 +2,10 @@
 /*.bold {
     font-size: 1.3em;
 }*/
-
+table,tr, td, th {
+    border: 1px solid #2E2E2E;
+    border-collapse: collapse;
+}
 
 .temp {
     background-color: burlywood;

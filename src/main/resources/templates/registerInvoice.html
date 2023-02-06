@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<th:block th:replace="~{basicTemplate :: setContent(~{this::content})}">
+<th:block th:replace="~{basicTemplate :: setContent(~{this::content})}" xmlns:th="http://www.w3.org/1999/xhtml">
     <th:block th:fragment="content">
 
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"
@@ -41,19 +41,39 @@
                 </div>
 
                 <!--unregistered invoice table-->
-                <div>
-                    <table>
-                        <thead>
+                <div class="unregisteredTableBox temp" style="overflow: auto; max-width: 88em;">
+                    <table id="unregisteredTable"  style="white-space:nowrap;" >
                         <tr>
-                            <th>제목제목</th>
+                            <th>주문번호</th>
+                            <th>주문날짜</th>
+                            <th>토마토품질</th>
+                            <th>토마토사이즈</th>
+                            <th>토마토박스수량</th>
+                            <th>전체주문수량</th>
+                            <th>주문자</th>
+                            <th>주문자연락처</th>
+                            <th>받는사람</th>
+                            <th>받는사람연락처</th>
+                            <th>받는사람주소</th>
+                            <th>배송메세지</th>
+                            <th>주문비고</th>
                         </tr>
-                        </thead>
+                        <tr th:each="un: ${unRegist}">
+                            <td>[[${un.tmtOrdIdx}]]</td>
+                            <td>[[${un.registDt}]]</td>
+                            <td>[[${un.tmtQlt}]]</td>
+                            <td>[[${un.ordererNm}]]</td>
+                            <td>[[${un.tmtBoxCnt}]]</td>
+                            <td>[[${un.tmtTotalCnt}]]</td>
+                            <td>[[${un.ordererNm}]]</td>
+                            <td>[[${un.ordererMobile}]]</td>
+                            <td>[[${un.receiverNm}]]</td>
+                            <td>[[${un.receiverMobile}]]</td>
+                            <td>[[${un.receiverAdr}]] &nbsp; [[${un.receiverDetailAdr}]]</td>
+                            <td>[[${un.shipMemo}]]</td>
+                            <td>[[${un.note}]]</td>
+                        </tr>
 
-                        <tbody>
-                        <tr>
-                            <td>내용내용</td>
-                        </tr>
-                        </tbody>
                     </table>
                 </div>
             </div>
