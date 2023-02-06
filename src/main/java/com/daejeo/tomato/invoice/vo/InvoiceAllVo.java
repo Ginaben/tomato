@@ -15,6 +15,7 @@ public class InvoiceAllVo {
     int tmtBoxCnt;
     String waybillNum;
     String shipDt;
+    String shippingFee;
 
     //order
     int tmtOrdIdx;
@@ -31,6 +32,8 @@ public class InvoiceAllVo {
     String depositDt;
     Long salesPrice;
     String note;
+    String tmtOrderSize;
+    String tmtQlt;
 
     //orderer info
     int ordererIdx;

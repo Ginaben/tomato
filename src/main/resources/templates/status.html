@@ -1,14 +1,20 @@
 <!DOCTYPE html>
 <th:block th:replace="~{basicTemplate :: setContent(~{this::content})}" xmlns:th="http://www.w3.org/1999/xhtml">
     <th:block th:fragment="content">
+
+        <!--스크립트-->
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"
                 integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
                 crossorigin="anonymous"></script>
         <link href="https://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.min.css" rel="stylesheet">
         <script src="https://code.jquery.com/ui/1.10.2/jquery-ui.min.js"></script>
 
+        <script th:inline="javascript" th:src="@{/js/common/common.js}"></script>
+
+        <!-- CSS -->
         <link rel="stylesheet" th:href="@{/css/status.css}"/>
 
+        <!-- contents 시작 -->
         <div class="wrapper">
 
             <!--Title-->
@@ -50,9 +56,8 @@
                     </tr>
                     <tr th:each="status: ${statusList}" th:with="tmtcnt=0">
                         <td class="orderNumber">[[${status.tmtOrdIdx}]]</td>
-                        <td>[[${status.tmtOrdIdx}]]</td>
+                        <td>[[${status.registDt}]]</td>
                         <td>[[${status.tmtQlt}]]</td>
-                        <td>[[${status.tmtSize}]]</td>
                         <td><span th:each="tmtSize: ${status.tmtSizeMap}"><p>[[${tmtSize.size}]]</p></span></td>
                         <td><span th:each="tmtSize: ${status.tmtSizeMap}"><p>[[${tmtSize.cnt}]]</p></span></td>
                         <td><span>[[${status.tmtBoxStatus}]]</span></td>
@@ -77,25 +82,6 @@
             </div>
             <!--End status Box-->
 
-
         </div>
     </th:block>
 </th:block>
-<script>
-    $(document).ready(function(e){
-        var orderNumChk = 0;
-        var orderTxt = '';
-        $(".orderNumber").each(function () {
-            var rows = $(".orderNumber:contains('" + $(this).text() + "')");
-            if (rows.length > 1) { //동일한 rows값이 1개 이상이면 열을 합침
-                rows.eq(0).attr("rowspan", rows.length);
-                rows.not(":eq(0)").remove();
-            }
-        });
-
-    })
-
-
-
-
-</script>

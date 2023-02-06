@@ -43,10 +43,18 @@
                         </tr>
                         <tr th:each="one: ${one}">
                             <td>[[${one.tmtOrdIdx}]]</td>
+                            <td>[[${one.registDt}]]</td>
+                            <td>[[${one.tmtQlt}]]</td>
                             <td>[[${one.ordererNm}]]</td>
-                            <td>[[${one.ordererMobile}]]</td>
                             <td>[[${one.tmtBoxCnt}]]</td>
                             <td>[[${one.tmtTotalCnt}]]</td>
+                            <td>[[${one.ordererNm}]]</td>
+                            <td>[[${one.ordererMobile}]]</td>
+                            <td>[[${one.receiverNm}]]</td>
+                            <td>[[${one.receiverMobile}]]</td>
+                            <td>[[${one.receiverAdr}]] &nbsp; [[${one.receiverDetailAdr}]]</td>
+                            <td>[[${one.shipMemo}]]</td>
+                            <td>[[${one.note}]]</td>
                         </tr>
 
                     </table>

@@ -41,7 +41,7 @@ public class InvoiceController {
         model.addAttribute("one", getOneBoxList);
         model.addAttribute("two", getTwoBoxList);
 
-        return "/exportInvoice";
+        return "exportInvoice";
     }
 
     @GetMapping("/invoiceRegist")

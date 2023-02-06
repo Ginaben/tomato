@@ -21,11 +21,33 @@
 
     <select id="getOneBoxList" resultType="com.daejeo.tomato.invoice.vo.InvoiceAllVo">
         SELECT
-                tii.*
-            ,   ttoi.*
-            ,   toi.*
-            ,   tri.*
-            ,   tcc.code_nm
+                 ttoi.tmt_ord_idx
+             ,   ttoi.tmt_pp_etc
+             ,   ttoi.tmt_size_json
+             ,   ttoi.tmt_total_cnt
+             ,   ttoi.ship_memo
+             ,   ttoi.cash_recpt_num
+             ,   ttoi.deposit_yn
+             ,   ttoi.deposit_dt
+             ,   ttoi.sales_price
+             ,   ttoi.note
+             ,   ttoi.regist_dt
+             ,   toi.orderer_idx
+             ,   toi.orderer_nm
+             ,   toi.orderer_mobile
+             ,   tri.receiver_idx
+             ,   tri.receiver_nm
+             ,   tri.receiver_mobile
+             ,   tri.receiver_adr
+             ,   tri.receiver_detail_adr
+             ,   tri.receiver_zipcode
+             ,   tii.invoice_idx
+             ,   tii.tmt_box_cnt
+             ,   tii.waybill_num
+             ,   tii.shipping_fee
+             ,   tii.ship_dt
+             ,   FN_CODE_NM(ttoi.tmt_pp_cd) AS tmtQlt
+             ,   FN_CODE_NM(JSON_EXTRACT(ttoi.tmt_size_json, '$.size')) AS tmtOrderSize
         FROM tb_invoice_info tii
         LEFT JOIN tb_tomato_order_info ttoi
                ON tii.tmt_ord_idx = ttoi.tmt_ord_idx
@@ -33,8 +55,6 @@
                ON ttoi.orderer_idx = toi.orderer_idx
         LEFT JOIN tb_receiver_info tri
                ON tri.receiver_idx = ttoi.receiver_idx
-        LEFT JOIN tb_common_code tcc
-               ON ttoi.tmt_pp_cd = tcc.code
         WHERE 1=1
           AND tii.tmt_box_cnt = 1
         ORDER BY tii.invoice_idx
@@ -42,11 +62,33 @@
 
     <select id="getTwoBoxList" resultType="com.daejeo.tomato.invoice.vo.InvoiceAllVo">
         SELECT
-            tii.*
-             ,   ttoi.*
-             ,   toi.*
-             ,   tri.*
-             ,   tcc.code_nm
+                 ttoi.tmt_ord_idx
+             ,   ttoi.tmt_pp_etc
+             ,   ttoi.tmt_size_json
+             ,   ttoi.tmt_total_cnt
+             ,   ttoi.ship_memo
+             ,   ttoi.cash_recpt_num
+             ,   ttoi.deposit_yn
+             ,   ttoi.deposit_dt
+             ,   ttoi.sales_price
+             ,   ttoi.note
+             ,   ttoi.regist_dt
+             ,   toi.orderer_idx
+             ,   toi.orderer_nm
+             ,   toi.orderer_mobile
+             ,   tri.receiver_idx
+             ,   tri.receiver_nm
+             ,   tri.receiver_mobile
+             ,   tri.receiver_adr
+             ,   tri.receiver_detail_adr
+             ,   tri.receiver_zipcode
+             ,   tii.invoice_idx
+             ,   tii.tmt_box_cnt
+             ,   tii.waybill_num
+             ,   tii.shipping_fee
+             ,   tii.ship_dt
+             ,   FN_CODE_NM(ttoi.tmt_pp_cd) AS tmtQlt
+             ,   FN_CODE_NM(JSON_EXTRACT(ttoi.tmt_size_json, '$.size')) AS tmtOrderSize
         FROM tb_invoice_info tii
                  LEFT JOIN tb_tomato_order_info ttoi
                            ON tii.tmt_ord_idx = ttoi.tmt_ord_idx
@@ -54,8 +96,6 @@
                            ON ttoi.orderer_idx = toi.orderer_idx
                  LEFT JOIN tb_receiver_info tri
                            ON tri.receiver_idx = ttoi.receiver_idx
-                 LEFT JOIN tb_common_code tcc
-                           ON ttoi.tmt_pp_cd = tcc.code
         WHERE 1=1
           AND tii.tmt_box_cnt = 2
         ORDER BY tii.invoice_idx
